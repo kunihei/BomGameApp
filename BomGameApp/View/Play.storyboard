@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1jx-Ma-Ndb">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -8,16 +8,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--プレイ-->
+        <!--Play View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="PlayViewController" customModule="BomGameApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="play" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="PlayViewController" customModule="BomGameApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="残り30秒" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcm-fA-a65">
-                                <rect key="frame" x="93.5" y="17" width="133" height="54"/>
+                                <rect key="frame" x="93.5" y="61" width="133" height="54"/>
                                 <color key="backgroundColor" red="0.99773113970000005" green="1" blue="0.6168179667" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="979-1T-WAK"/>
@@ -28,27 +28,27 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="TU6-Zi-TaP">
-                                <rect key="frame" x="8.5" y="79" width="303" height="72"/>
+                                <rect key="frame" x="8.5" y="123" width="303" height="72"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vm-4L-P6d">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vm-4L-P6d">
                                         <rect key="frame" x="0.0" y="0.0" width="54" height="72"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="💣"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C55-lo-8Ol">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C55-lo-8Ol">
                                         <rect key="frame" x="83" y="0.0" width="54" height="72"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="💣"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ugs-Cj-wD9">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ugs-Cj-wD9">
                                         <rect key="frame" x="166" y="0.0" width="54" height="72"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="💣"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EE4-Cm-aRu">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EE4-Cm-aRu">
                                         <rect key="frame" x="249" y="0.0" width="54" height="72"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -57,27 +57,27 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="rJL-rd-Wbb">
-                                <rect key="frame" x="8.5" y="239" width="303" height="72"/>
+                                <rect key="frame" x="8.5" y="283" width="303" height="72"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwk-BY-W9U">
+                                    <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwk-BY-W9U">
                                         <rect key="frame" x="0.0" y="0.0" width="54" height="72"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="💣"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1y-F4-SzK">
+                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1y-F4-SzK">
                                         <rect key="frame" x="83" y="0.0" width="54" height="72"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="💣"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xah-sz-aoa">
+                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xah-sz-aoa">
                                         <rect key="frame" x="166" y="0.0" width="54" height="72"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="💣"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6El-gk-4KE">
+                                    <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6El-gk-4KE">
                                         <rect key="frame" x="249" y="0.0" width="54" height="72"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -86,27 +86,27 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="3oZ-JM-lCH">
-                                <rect key="frame" x="8.5" y="319" width="303" height="72"/>
+                                <rect key="frame" x="8.5" y="363" width="303" height="72"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H1b-HT-CUk">
+                                    <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H1b-HT-CUk">
                                         <rect key="frame" x="0.0" y="0.0" width="54" height="72"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="💣"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sin-vt-YRs">
+                                    <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sin-vt-YRs">
                                         <rect key="frame" x="83" y="0.0" width="54" height="72"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="💣"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4XL-fl-QbU">
+                                    <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4XL-fl-QbU">
                                         <rect key="frame" x="166" y="0.0" width="54" height="72"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="💣"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4N-KI-9ic">
+                                    <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4N-KI-9ic">
                                         <rect key="frame" x="249" y="0.0" width="54" height="72"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -115,27 +115,27 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="JtP-o1-wEn">
-                                <rect key="frame" x="8.5" y="159" width="303" height="72"/>
+                                <rect key="frame" x="8.5" y="203" width="303" height="72"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IuI-pZ-mjK">
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IuI-pZ-mjK">
                                         <rect key="frame" x="0.0" y="0.0" width="54" height="72"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="💣"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CU6-9a-7fh">
+                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CU6-9a-7fh">
                                         <rect key="frame" x="83" y="0.0" width="54" height="72"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="💣"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1y7-1f-cTq">
+                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1y7-1f-cTq">
                                         <rect key="frame" x="166" y="0.0" width="54" height="72"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="💣"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G2s-xD-KFJ">
+                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G2s-xD-KFJ">
                                         <rect key="frame" x="249" y="0.0" width="54" height="72"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -152,27 +152,27 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="woo-zm-6w3">
-                                <rect key="frame" x="8.5" y="399" width="303" height="72"/>
+                                <rect key="frame" x="8.5" y="443" width="303" height="72"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFC-oD-lNk">
+                                    <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFC-oD-lNk">
                                         <rect key="frame" x="0.0" y="0.0" width="54" height="72"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="💣"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Uv-9X-KkJ">
+                                    <button opaque="NO" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Uv-9X-KkJ">
                                         <rect key="frame" x="83" y="0.0" width="54" height="72"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="💣"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMH-44-bHw">
+                                    <button opaque="NO" tag="19" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMH-44-bHw">
                                         <rect key="frame" x="166" y="0.0" width="54" height="72"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="💣"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdH-gb-lBd">
+                                    <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdH-gb-lBd">
                                         <rect key="frame" x="249" y="0.0" width="54" height="72"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -180,38 +180,111 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BqY-CZ-vpy">
+                                <rect key="frame" x="237" y="73" width="67" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="67" id="3kQ-Dx-r3h"/>
+                                    <constraint firstAttribute="height" constant="31" id="oG2-Zk-34z"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="リセット">
+                                    <color key="titleColor" systemColor="systemPinkColor"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRw-ig-QQd">
+                                <rect key="frame" x="16" y="73" width="67" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="hs7-1S-5Fu"/>
+                                    <constraint firstAttribute="width" constant="67" id="wG7-s9-dFI"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="スタート">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="startButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="B4P-QA-2xo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="3oZ-JM-lCH" firstAttribute="top" secondItem="rJL-rd-Wbb" secondAttribute="bottom" constant="8" symbolic="YES" id="33M-wJ-CGe"/>
                             <constraint firstItem="TU6-Zi-TaP" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="5ld-JZ-Jll"/>
                             <constraint firstItem="xcm-fA-a65" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="17" id="D1s-U8-d7m"/>
+                            <constraint firstItem="BqY-CZ-vpy" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="29" id="DZt-iV-qze"/>
                             <constraint firstItem="3oZ-JM-lCH" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="JDW-Qe-OYL"/>
                             <constraint firstItem="woo-zm-6w3" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="MSi-CP-iCN"/>
                             <constraint firstItem="rJL-rd-Wbb" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="NVG-42-ijP"/>
                             <constraint firstItem="U8C-FG-74R" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="NeB-8m-DPZ"/>
                             <constraint firstItem="rJL-rd-Wbb" firstAttribute="top" secondItem="JtP-o1-wEn" secondAttribute="bottom" constant="8" symbolic="YES" id="WAC-C4-UTI"/>
+                            <constraint firstItem="nRw-ig-QQd" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="29" id="Wx4-ks-NLO"/>
                             <constraint firstItem="U8C-FG-74R" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="ZVf-jT-qyO"/>
+                            <constraint firstItem="nRw-ig-QQd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="g58-xs-Ejj"/>
                             <constraint firstItem="JtP-o1-wEn" firstAttribute="top" secondItem="TU6-Zi-TaP" secondAttribute="bottom" constant="8" symbolic="YES" id="ozi-Mp-NjG"/>
                             <constraint firstItem="TU6-Zi-TaP" firstAttribute="top" secondItem="xcm-fA-a65" secondAttribute="bottom" constant="8" symbolic="YES" id="ubb-Vx-sDL"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="BqY-CZ-vpy" secondAttribute="trailing" constant="16" id="uyT-rM-h65"/>
                             <constraint firstItem="xcm-fA-a65" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="xdH-lg-MxW"/>
                             <constraint firstItem="JtP-o1-wEn" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="y3E-YZ-vGE"/>
                             <constraint firstItem="woo-zm-6w3" firstAttribute="top" secondItem="3oZ-JM-lCH" secondAttribute="bottom" constant="8" symbolic="YES" id="zis-4y-uRU"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="プレイ" image="gamecontroller.fill" catalog="system" id="1wF-mk-vQI"/>
+                    <navigationItem key="navigationItem" id="ZQZ-3o-dOB"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="bom1" destination="2vm-4L-P6d" id="Iej-YY-Jgr"/>
+                        <outlet property="bom10" destination="r1y-F4-SzK" id="QqE-yA-DXz"/>
+                        <outlet property="bom11" destination="xah-sz-aoa" id="3dc-DO-A30"/>
+                        <outlet property="bom12" destination="6El-gk-4KE" id="dPk-wZ-fHM"/>
+                        <outlet property="bom13" destination="H1b-HT-CUk" id="sAs-nh-ili"/>
+                        <outlet property="bom14" destination="Sin-vt-YRs" id="hob-9u-zin"/>
+                        <outlet property="bom15" destination="4XL-fl-QbU" id="lp4-FW-QiG"/>
+                        <outlet property="bom16" destination="d4N-KI-9ic" id="JDr-it-qGN"/>
+                        <outlet property="bom17" destination="MFC-oD-lNk" id="x6e-GS-vJW"/>
+                        <outlet property="bom18" destination="9Uv-9X-KkJ" id="e4U-e5-CZx"/>
+                        <outlet property="bom19" destination="gMH-44-bHw" id="uA8-pF-Z6p"/>
+                        <outlet property="bom2" destination="C55-lo-8Ol" id="liu-Eg-r76"/>
+                        <outlet property="bom20" destination="wdH-gb-lBd" id="f8S-Md-Ft9"/>
+                        <outlet property="bom3" destination="Ugs-Cj-wD9" id="xol-jI-u4Q"/>
+                        <outlet property="bom4" destination="EE4-Cm-aRu" id="PKa-eV-iYo"/>
+                        <outlet property="bom5" destination="IuI-pZ-mjK" id="Oiu-jD-ir0"/>
+                        <outlet property="bom6" destination="CU6-9a-7fh" id="h24-95-fUC"/>
+                        <outlet property="bom7" destination="1y7-1f-cTq" id="uaW-q5-YKw"/>
+                        <outlet property="bom8" destination="G2s-xD-KFJ" id="cfW-MX-92w"/>
+                        <outlet property="bom9" destination="rwk-BY-W9U" id="MLL-i8-Vt8"/>
+                        <outlet property="reset" destination="BqY-CZ-vpy" id="apS-rI-Hh5"/>
+                        <outlet property="start" destination="nRw-ig-QQd" id="ahp-1E-dxT"/>
+                        <outlet property="timerLabel" destination="xcm-fA-a65" id="hTS-ZS-dwP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1031.25" y="97.183098591549296"/>
+        </scene>
+        <!--プレイ-->
+        <scene sceneID="72e-1E-8Gw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1jx-Ma-Ndb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="プレイ" image="gamecontroller.fill" catalog="system" id="1wF-mk-vQI"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="erp-fJ-5bV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="CTe-uM-TfK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ba3-gt-VUQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="33.75" y="97.183098591549296"/>
         </scene>
     </scenes>
     <resources>
         <image name="gamecontroller.fill" catalog="system" width="128" height="80"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

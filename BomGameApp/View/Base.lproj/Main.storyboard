@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--設定-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BomGameApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="罰ゲーム1個目" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CTk-6T-v9E">
-                                <rect key="frame" x="52" y="136" width="311" height="34"/>
+                                <rect key="frame" x="52" y="180" width="311" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="WXW-mB-ser"/>
                                     <constraint firstAttribute="width" constant="311" id="dvE-WK-qdw"/>
@@ -26,7 +26,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="罰ゲーム2個目" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A8X-Ju-0az">
-                                <rect key="frame" x="52" y="181" width="311" height="34"/>
+                                <rect key="frame" x="52" y="225" width="311" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="311" id="QDJ-UF-etG"/>
                                     <constraint firstAttribute="height" constant="34" id="fFg-tM-UAh"/>
@@ -35,7 +35,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="罰ゲーム3個目" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e2Z-q6-mih">
-                                <rect key="frame" x="52" y="226" width="311" height="34"/>
+                                <rect key="frame" x="52" y="270" width="311" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="311" id="Rii-JH-0bp"/>
                                     <constraint firstAttribute="height" constant="34" id="pds-Ci-S6d"/>
@@ -44,7 +44,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="罰ゲーム4個目" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OOV-z4-UDy">
-                                <rect key="frame" x="52" y="271" width="311" height="34"/>
+                                <rect key="frame" x="52" y="315" width="311" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="311" id="bDX-lS-1q8"/>
                                     <constraint firstAttribute="height" constant="34" id="wXS-8l-wyq"/>
@@ -53,7 +53,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="罰ゲーム5個目" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dXt-Ti-pb2">
-                                <rect key="frame" x="52" y="316" width="311" height="34"/>
+                                <rect key="frame" x="52" y="360" width="311" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="311" id="Ed1-ag-3Zp"/>
                                     <constraint firstAttribute="height" constant="34" id="o7F-7n-aqG"/>
@@ -62,7 +62,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="制限時間" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ng-sT-mos">
-                                <rect key="frame" x="52" y="393" width="82" height="55"/>
+                                <rect key="frame" x="52" y="437" width="82" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="VOu-4P-pXF"/>
                                     <constraint firstAttribute="width" constant="82" id="wj5-N4-baQ"/>
@@ -72,7 +72,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="爆破個数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tnS-cj-Fo0">
-                                <rect key="frame" x="253" y="393" width="110" height="55"/>
+                                <rect key="frame" x="253" y="437" width="110" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="2Qw-Tw-xaQ"/>
                                     <constraint firstAttribute="height" constant="55" id="ftG-QY-mTm"/>
@@ -82,7 +82,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jA6-BC-kyc">
-                                <rect key="frame" x="253" y="456" width="110" height="34"/>
+                                <rect key="frame" x="253" y="500" width="110" height="34"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yrR-1E-iXv">
                                         <rect key="frame" x="0.0" y="0.0" width="55" height="34"/>
@@ -110,7 +110,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="※最大個数5個まで" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u4j-OV-N0F">
-                                <rect key="frame" x="253" y="502" width="131" height="33"/>
+                                <rect key="frame" x="253" y="546" width="131" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="131" id="gQ2-7q-Nn6"/>
                                     <constraint firstAttribute="height" constant="33" id="tXt-6u-6KN"/>
@@ -120,7 +120,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="VS5-70-WoG">
-                                <rect key="frame" x="52" y="86" width="311" height="42"/>
+                                <rect key="frame" x="52" y="130" width="311" height="42"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="罰ゲーム" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ewj-o0-Ynh">
                                         <rect key="frame" x="0.0" y="0.0" width="194.5" height="42"/>
@@ -147,7 +147,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="akH-7g-qY4">
-                                <rect key="frame" x="52" y="456" width="110" height="34"/>
+                                <rect key="frame" x="52" y="500" width="110" height="34"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CgV-WW-1G5">
                                         <rect key="frame" x="0.0" y="0.0" width="55" height="34"/>
@@ -174,6 +174,16 @@
                                     <constraint firstAttribute="height" constant="34" id="U6t-OP-bcs"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="※最大60秒まで" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcD-VK-oBF">
+                                <rect key="frame" x="52" y="546" width="131" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="131" id="Bvs-yC-ppc"/>
+                                    <constraint firstAttribute="height" constant="33" id="qrz-O2-9xg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -188,6 +198,7 @@
                             <constraint firstItem="e2Z-q6-mih" firstAttribute="top" secondItem="A8X-Ju-0az" secondAttribute="bottom" constant="11" id="Hio-Vq-99x"/>
                             <constraint firstItem="CTk-6T-v9E" firstAttribute="top" secondItem="VS5-70-WoG" secondAttribute="bottom" constant="8" id="Hr4-87-vry"/>
                             <constraint firstItem="e2Z-q6-mih" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="52" id="J4n-cc-C5J"/>
+                            <constraint firstItem="rcD-VK-oBF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="52" id="P0b-mu-6KR"/>
                             <constraint firstItem="OOV-z4-UDy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="52" id="Plo-I4-sTa"/>
                             <constraint firstItem="akH-7g-qY4" firstAttribute="top" secondItem="1Ng-sT-mos" secondAttribute="bottom" constant="8" id="QAq-K7-R1b"/>
                             <constraint firstItem="VS5-70-WoG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="42" id="SNU-ac-wWT"/>
@@ -201,6 +212,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="e2Z-q6-mih" secondAttribute="trailing" constant="51" id="eTo-dB-N7x"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="u4j-OV-N0F" secondAttribute="trailing" constant="30" id="ecz-LB-mzR"/>
                             <constraint firstItem="u4j-OV-N0F" firstAttribute="top" secondItem="jA6-BC-kyc" secondAttribute="bottom" constant="12" id="lbh-4l-N3Y"/>
+                            <constraint firstItem="rcD-VK-oBF" firstAttribute="top" secondItem="akH-7g-qY4" secondAttribute="bottom" constant="12" id="nCc-vv-oKN"/>
                             <constraint firstItem="dXt-Ti-pb2" firstAttribute="top" secondItem="OOV-z4-UDy" secondAttribute="bottom" constant="11" id="oRu-TJ-Iwg"/>
                             <constraint firstItem="1Ng-sT-mos" firstAttribute="top" secondItem="dXt-Ti-pb2" secondAttribute="bottom" constant="43" id="qm3-Xs-uaC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CTk-6T-v9E" secondAttribute="trailing" constant="51" id="t9q-DN-Tnb"/>
@@ -208,11 +220,20 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tnS-cj-Fo0" secondAttribute="trailing" constant="51" id="vAw-Xq-Zs4"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="設定" image="gearshape.fill" catalog="system" id="yhK-am-IM0"/>
+                    <navigationItem key="navigationItem" id="3RC-cg-kHv"/>
+                    <connections>
+                        <outlet property="numExplosions" destination="yrR-1E-iXv" id="dY1-Cl-L1e"/>
+                        <outlet property="punishmentGame1" destination="CTk-6T-v9E" id="LD7-rx-H87"/>
+                        <outlet property="punishmentGame2" destination="A8X-Ju-0az" id="OCa-5x-94o"/>
+                        <outlet property="punishmentGame3" destination="e2Z-q6-mih" id="5ti-lx-rQW"/>
+                        <outlet property="punishmentGame4" destination="OOV-z4-UDy" id="JkN-sr-19S"/>
+                        <outlet property="punishmentGame5" destination="dXt-Ti-pb2" id="WmV-2R-V2v"/>
+                        <outlet property="timerTextField" destination="CgV-WW-1G5" id="32Y-ko-cSw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="944.92753623188412" y="83.705357142857139"/>
+            <point key="canvasLocation" x="1855.072463768116" y="83.705357142857139"/>
         </scene>
         <!--Play-->
         <scene sceneID="Mxo-3Z-yiK">
@@ -235,13 +256,32 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="42b-PK-jjR"/>
+                        <segue destination="9Q6-Ki-0il" kind="relationship" relationship="viewControllers" id="42b-PK-jjR"/>
                         <segue destination="JIw-LB-QFs" kind="relationship" relationship="viewControllers" id="HcU-o0-HSD"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zzz-2J-X5d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="34.782608695652179" y="83.705357142857139"/>
+        </scene>
+        <!--設定-->
+        <scene sceneID="rLa-oe-5u5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9Q6-Ki-0il" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="設定" image="gearshape.fill" catalog="system" id="yhK-am-IM0"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fRh-sq-X7W">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="hhJ-Az-y3u"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dzm-dE-DiX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="944.92753623188412" y="83.705357142857139"/>
         </scene>
     </scenes>
     <resources>
