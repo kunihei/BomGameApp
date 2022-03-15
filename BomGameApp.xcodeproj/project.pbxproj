@@ -15,6 +15,9 @@
 		BA1BA868279843F00054C44C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA1BA867279843F00054C44C /* Assets.xcassets */; };
 		BA1BA86B279843F00054C44C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA1BA869279843F00054C44C /* LaunchScreen.storyboard */; };
 		BA674EBC279EECBE00581457 /* SetValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA674EBB279EECBE00581457 /* SetValue.swift */; };
+		BAAF95F327A54DE50064C5AE /* PunishmentGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAAF95F227A54DE50064C5AE /* PunishmentGame.storyboard */; };
+		BAAF95F527A54E150064C5AE /* PunishmentGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAF95F427A54E150064C5AE /* PunishmentGameViewController.swift */; };
+		BAAF95F727A68C060064C5AE /* Explosion.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = BAAF95F627A669A40064C5AE /* Explosion.mp4 */; };
 		BAB7B114279A2A6E00F592DB /* Play.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAB7B113279A2A6E00F592DB /* Play.storyboard */; };
 		BAB7B116279BDAC200F592DB /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB7B115279BDAC200F592DB /* PlayViewController.swift */; };
 /* End PBXBuildFile section */
@@ -32,6 +35,9 @@
 		BA1BA86A279843F00054C44C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA1BA86C279843F00054C44C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA674EBB279EECBE00581457 /* SetValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetValue.swift; sourceTree = "<group>"; };
+		BAAF95F227A54DE50064C5AE /* PunishmentGame.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PunishmentGame.storyboard; sourceTree = "<group>"; };
+		BAAF95F427A54E150064C5AE /* PunishmentGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PunishmentGameViewController.swift; sourceTree = "<group>"; };
+		BAAF95F627A669A40064C5AE /* Explosion.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Explosion.mp4; sourceTree = "<group>"; };
 		BAB7B113279A2A6E00F592DB /* Play.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Play.storyboard; sourceTree = "<group>"; };
 		BAB7B115279BDAC200F592DB /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,6 +88,7 @@
 				BAB7B110279A2A3900F592DB /* ViewModel */,
 				BA1BA867279843F00054C44C /* Assets.xcassets */,
 				BA1BA86C279843F00054C44C /* Info.plist */,
+				BAAF95F627A669A40064C5AE /* Explosion.mp4 */,
 			);
 			path = BomGameApp;
 			sourceTree = "<group>";
@@ -93,6 +100,7 @@
 				BA1BA860279843EF0054C44C /* SceneDelegate.swift */,
 				BA1BA862279843EF0054C44C /* ViewController.swift */,
 				BAB7B115279BDAC200F592DB /* PlayViewController.swift */,
+				BAAF95F427A54E150064C5AE /* PunishmentGameViewController.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -103,6 +111,7 @@
 				BA1BA869279843F00054C44C /* LaunchScreen.storyboard */,
 				BA1BA864279843EF0054C44C /* Main.storyboard */,
 				BAB7B113279A2A6E00F592DB /* Play.storyboard */,
+				BAAF95F227A54DE50064C5AE /* PunishmentGame.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -184,10 +193,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAAF95F727A68C060064C5AE /* Explosion.mp4 in Resources */,
 				BAB7B114279A2A6E00F592DB /* Play.storyboard in Resources */,
 				BA1BA86B279843F00054C44C /* LaunchScreen.storyboard in Resources */,
 				BA1BA868279843F00054C44C /* Assets.xcassets in Resources */,
 				BA1BA866279843EF0054C44C /* Main.storyboard in Resources */,
+				BAAF95F327A54DE50064C5AE /* PunishmentGame.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAB7B116279BDAC200F592DB /* PlayViewController.swift in Sources */,
+				BAAF95F527A54E150064C5AE /* PunishmentGameViewController.swift in Sources */,
 				BA674EBC279EECBE00581457 /* SetValue.swift in Sources */,
 				BA1BA863279843EF0054C44C /* ViewController.swift in Sources */,
 				BA1BA85F279843EF0054C44C /* AppDelegate.swift in Sources */,

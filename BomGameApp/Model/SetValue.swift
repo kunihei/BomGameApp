@@ -14,5 +14,7 @@ class SetValue {
     var timerCount = 0
     var punishmentGames = [String: String]()
     var numExplosions = 1
+    var timerStopFlag = true
+    var firstShuffleFlag = true
 }
 

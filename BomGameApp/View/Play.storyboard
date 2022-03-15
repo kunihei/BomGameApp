@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1jx-Ma-Ndb">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -8,16 +8,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Play View Controller-->
+        <!--プレイ-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController storyboardIdentifier="play" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="PlayViewController" customModule="BomGameApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="残り30秒" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcm-fA-a65">
-                                <rect key="frame" x="93.5" y="61" width="133" height="54"/>
+                                <rect key="frame" x="121" y="61" width="133" height="54"/>
                                 <color key="backgroundColor" red="0.99773113970000005" green="1" blue="0.6168179667" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="979-1T-WAK"/>
@@ -28,7 +28,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="TU6-Zi-TaP">
-                                <rect key="frame" x="8.5" y="123" width="303" height="72"/>
+                                <rect key="frame" x="36" y="123" width="303" height="72"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vm-4L-P6d">
                                         <rect key="frame" x="0.0" y="0.0" width="54" height="72"/>
@@ -57,7 +57,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="rJL-rd-Wbb">
-                                <rect key="frame" x="8.5" y="283" width="303" height="72"/>
+                                <rect key="frame" x="36" y="283" width="303" height="72"/>
                                 <subviews>
                                     <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwk-BY-W9U">
                                         <rect key="frame" x="0.0" y="0.0" width="54" height="72"/>
@@ -86,7 +86,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="3oZ-JM-lCH">
-                                <rect key="frame" x="8.5" y="363" width="303" height="72"/>
+                                <rect key="frame" x="36" y="363" width="303" height="72"/>
                                 <subviews>
                                     <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H1b-HT-CUk">
                                         <rect key="frame" x="0.0" y="0.0" width="54" height="72"/>
@@ -115,7 +115,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="JtP-o1-wEn">
-                                <rect key="frame" x="8.5" y="203" width="303" height="72"/>
+                                <rect key="frame" x="36" y="203" width="303" height="72"/>
                                 <subviews>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IuI-pZ-mjK">
                                         <rect key="frame" x="0.0" y="0.0" width="54" height="72"/>
@@ -144,7 +144,7 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U8C-FG-74R">
-                                <rect key="frame" x="0.0" y="469" width="320" height="50"/>
+                                <rect key="frame" x="27.5" y="568" width="320" height="50"/>
                                 <color key="backgroundColor" red="1" green="0.75129543529999998" blue="0.74112596009999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="fhe-UX-2fC"/>
@@ -152,7 +152,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="woo-zm-6w3">
-                                <rect key="frame" x="8.5" y="443" width="303" height="72"/>
+                                <rect key="frame" x="36" y="443" width="303" height="72"/>
                                 <subviews>
                                     <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFC-oD-lNk">
                                         <rect key="frame" x="0.0" y="0.0" width="54" height="72"/>
@@ -181,7 +181,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BqY-CZ-vpy">
-                                <rect key="frame" x="237" y="73" width="67" height="31"/>
+                                <rect key="frame" x="292" y="73" width="67" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="67" id="3kQ-Dx-r3h"/>
                                     <constraint firstAttribute="height" constant="31" id="oG2-Zk-34z"/>
@@ -199,7 +199,7 @@
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="スタート">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="startButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="B4P-QA-2xo"/>
@@ -207,7 +207,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="3oZ-JM-lCH" firstAttribute="top" secondItem="rJL-rd-Wbb" secondAttribute="bottom" constant="8" symbolic="YES" id="33M-wJ-CGe"/>
                             <constraint firstItem="TU6-Zi-TaP" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="5ld-JZ-Jll"/>
@@ -229,6 +229,9 @@
                             <constraint firstItem="woo-zm-6w3" firstAttribute="top" secondItem="3oZ-JM-lCH" secondAttribute="bottom" constant="8" symbolic="YES" id="zis-4y-uRU"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="プレイ" image="gamecontroller" catalog="system" id="SsZ-nH-hB4">
+                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" id="ZQZ-3o-dOB"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -259,16 +262,16 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1031.25" y="97.183098591549296"/>
+            <point key="canvasLocation" x="1804" y="97"/>
         </scene>
-        <!--プレイ-->
+        <!--Navigation Controller-->
         <scene sceneID="72e-1E-8Gw">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1jx-Ma-Ndb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="プレイ" image="gamecontroller.fill" catalog="system" id="1wF-mk-vQI"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="erp-fJ-5bV">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -278,11 +281,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ba3-gt-VUQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="33.75" y="97.183098591549296"/>
+            <point key="canvasLocation" x="972" y="96.7016491754123"/>
         </scene>
     </scenes>
     <resources>
-        <image name="gamecontroller.fill" catalog="system" width="128" height="80"/>
+        <image name="gamecontroller" catalog="system" width="128" height="80"/>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
