@@ -11,10 +11,13 @@ class SetValue {
     private init() {}
     static let shared = SetValue()
     
-    var timerCount = 0
     var punishmentGames = [String: String]()
-    var numExplosions = 1
-    var timerStopFlag = true
+    var punishmentGamesList: [String] = []
+    var arrayButtonTag = [Int]()
     var firstShuffleFlag = true
+    var selectedFlag = false
+    var timerStopFlag = true
+    var numExplosions = 1
+    var timerCount = 0
 }
 

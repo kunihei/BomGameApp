@@ -37,7 +37,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setColor_Border()
         timerTextField.text = "0"
         numExplosions.text = "1"
         tabBarController?.tabBar.items![targetTabBar].isEnabled = false
@@ -45,6 +44,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         pickerView.showsSelectionIndicator = true
         createDone()
         textFieldList = [punishmentGame1, punishmentGame2, punishmentGame3, punishmentGame4, punishmentGame5]
+        setColor_Border()
         textFieldList.forEach { textField in
             textField.delegate = self
             textField.returnKeyType = .done
@@ -105,21 +105,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     private func setColor_Border() {
         UITabBar.appearance().tintColor = UIColor.red
         UITabBar.appearance().unselectedItemTintColor = UIColor.white
-        punishmentGame1.layer.borderColor = UIColor.white.cgColor
-        punishmentGame1.layer.cornerRadius = 5.0
-        punishmentGame1.layer.borderWidth = 1.0
-        punishmentGame2.layer.borderColor = UIColor.white.cgColor
-        punishmentGame2.layer.cornerRadius = 5.0
-        punishmentGame2.layer.borderWidth = 1.0
-        punishmentGame3.layer.borderColor = UIColor.white.cgColor
-        punishmentGame3.layer.cornerRadius = 5.0
-        punishmentGame3.layer.borderWidth = 1.0
-        punishmentGame4.layer.borderColor = UIColor.white.cgColor
-        punishmentGame4.layer.cornerRadius = 5.0
-        punishmentGame4.layer.borderWidth = 1.0
-        punishmentGame5.layer.borderColor = UIColor.white.cgColor
-        punishmentGame5.layer.cornerRadius = 5.0
-        punishmentGame5.layer.borderWidth = 1.0
+        textFieldList.forEach { textField in
+            textField.layer.borderColor = UIColor.white.cgColor
+            textField.layer.cornerRadius = 5.0
+            textField.layer.borderWidth = 1.0
+        }
     }
     
     /// 改行ボタンの変更

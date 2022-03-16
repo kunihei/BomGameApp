@@ -173,12 +173,11 @@ class PlayViewController: UIViewController {
                 view.removeFromSuperview()
             }
         }
-        
     }
     
     // 全て初期状態に戻す
     private func allReset() {
-        
+        setValue.firstShuffleFlag = true
         bomButtons.forEach { bom in
             bom.isHidden = false
         }

@@ -37,11 +37,17 @@ class PunishmentGameViewController: UIViewController {
             punishmentButton5
         ]
         firstShuffleFlag = setValue.firstShuffleFlag
-         let tmpPunishmentGamesList = setValue.punishmentGames
-        for (key, val) in tmpPunishmentGamesList { punishmentGamesList.append(val) }
         if firstShuffleFlag {
+            let tmpPunishmentGamesList = setValue.punishmentGames
+            for (key, val) in tmpPunishmentGamesList { setValue.punishmentGamesList.append(val) }
+            punishmentGamesList = setValue.punishmentGamesList
             punishmentGamesList.shuffle()
             setValue.firstShuffleFlag = false
+        }
+        
+        for tmp in 0..<punishmentButtonList.count {
+            if tmp >= 0 && tmp < punishmentGamesList.count { continue }
+            punishmentButtonList[tmp].isHidden = true
         }
         
         punishmentButtonList.forEach { button in
