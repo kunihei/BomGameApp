@@ -106,7 +106,7 @@
                                     <action selector="displayButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="gxp-wf-uYD"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZG-Av-lvd">
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZG-Av-lvd">
                                 <rect key="frame" x="133" y="573" width="149" height="62"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="62" id="4tu-qf-jZF"/>

@@ -42,12 +42,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        timerTextField.text = "0"
-        numExplosions.text = "1"
-        explanationLabel.text = explanationArray[index]
-        explanationLabel.morphingEffect = .burn
-        tabBarController?.tabBar.items![targetTabBar].isEnabled = false
-        totalDelegate_tag()
+        initialization()
         pickerView.showsSelectionIndicator = true
         createDone()
         textFieldList = [punishmentGame1, punishmentGame2, punishmentGame3, punishmentGame4, punishmentGame5]
@@ -158,7 +153,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     /// delegate関係とタグをまとめたメソッド
-    private func totalDelegate_tag() {
+    private func initialization() {
+        timerTextField.text = "0"
+        numExplosions.text = "1"
+        explanationLabel.morphingEffect = .burn
+        tabBarController?.tabBar.items![targetTabBar].isEnabled = false
         pickerView.delegate = self
         pickerView.dataSource = self
         pickerView2.delegate = self

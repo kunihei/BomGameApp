@@ -25,7 +25,6 @@ class PunishmentGameViewController: UIViewController {
     private let titleStringArray = ["あなたの運命を", "決める罰ゲームを", "選択してください!"]
     
     private var punishmentButtonList:[UIButton] = []
-    private var punishmentGamesList: [String] = []
     private var firstShuffleFlag = Bool()
     private var firstTapBtn = Int()
     private var timer: Timer?
@@ -34,7 +33,6 @@ class PunishmentGameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        titleLabel.text = titleStringArray[index]
         titleLabel.morphingEffect = .burn
         punishmentButtonList = [
             punishmentButton1,
@@ -43,17 +41,11 @@ class PunishmentGameViewController: UIViewController {
             punishmentButton4,
             punishmentButton5
         ]
-        firstShuffleFlag = setValue.firstShuffleFlag
-        if firstShuffleFlag {
-            let tmpPunishmentGamesList = setValue.punishmentGames
-            for (key, val) in tmpPunishmentGamesList { setValue.punishmentGamesList.append(val) }
-            punishmentGamesList = setValue.punishmentGamesList
-            punishmentGamesList.shuffle()
-            setValue.firstShuffleFlag = false
-        }
+        selectedButtnSetTitle()
+        firstShuffle()
         
         for tmp in 0..<punishmentButtonList.count {
-            if tmp >= 0 && tmp < punishmentGamesList.count { continue }
+            if tmp >= 0 && tmp < setValue.punishmentGamesList.count { continue }
             punishmentButtonList[tmp].isHidden = true
         }
         
@@ -61,10 +53,12 @@ class PunishmentGameViewController: UIViewController {
             button.rx.tap
                 .asDriver()
                 .drive(onNext: { [weak self] _ in
-                    self?.flipButton(button: button, title: (self?.punishmentGamesList[button.tag])!)
+                    self?.flipButton(button: button, title: (self?.setValue.punishmentGamesList[button.tag])!)
                     button.isEnabled = false
                     self?.firstTapBtn = button.tag
                     if button.tag == self?.firstTapBtn {
+                        self?.setValue.selectedTagArray.append(self!.firstTapBtn)
+                        self?.setValue.selectedFlag = true
                         self?.punishmentButtonList.forEach { button2 in
                             button2.isEnabled = false
                         }
@@ -88,6 +82,25 @@ class PunishmentGameViewController: UIViewController {
         index += 1
         if index >= titleStringArray.count {
             index = 0
+        }
+    }
+    
+    private func selectedButtnSetTitle() {
+        if setValue.selectedFlag {
+            for tmp in 0..<setValue.selectedTagArray.count {
+                let selectedTag = setValue.selectedTagArray[tmp]
+                punishmentButtonList[selectedTag].isEnabled = false
+                punishmentButtonList[selectedTag].setTitle(setValue.punishmentGamesList[selectedTag], for: .normal)
+            }
+        }
+    }
+    
+    private func firstShuffle() {
+        if setValue.firstShuffleFlag {
+            let tmpPunishmentGamesList = setValue.punishmentGames
+            for (key, val) in tmpPunishmentGamesList { setValue.punishmentGamesList.append(val) }
+            setValue.punishmentGamesList.shuffle()
+            setValue.firstShuffleFlag = false
         }
     }
     
