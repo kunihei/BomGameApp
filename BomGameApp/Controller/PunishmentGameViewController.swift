@@ -8,9 +8,11 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import LTMorphingLabel
 
 class PunishmentGameViewController: UIViewController {
     
+    @IBOutlet weak var titleLabel: LTMorphingLabel!
     @IBOutlet weak var punishmentButton1: UIButton!
     @IBOutlet weak var punishmentButton2: UIButton!
     @IBOutlet weak var punishmentButton3: UIButton!
@@ -20,15 +22,20 @@ class PunishmentGameViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
     private let setValue = SetValue.shared
+    private let titleStringArray = ["あなたの運命を", "決める罰ゲームを", "選択してください!"]
     
     private var punishmentButtonList:[UIButton] = []
     private var punishmentGamesList: [String] = []
     private var firstShuffleFlag = Bool()
     private var firstTapBtn = Int()
+    private var timer: Timer?
+    private var index = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        titleLabel.text = titleStringArray[index]
+        titleLabel.morphingEffect = .burn
         punishmentButtonList = [
             punishmentButton1,
             punishmentButton2,
@@ -64,6 +71,23 @@ class PunishmentGameViewController: UIViewController {
                     }
                 })
                 .disposed(by: disposeBag)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        timer = Timer.scheduledTimer(timeInterval: 3.0,
+                                     target: self,
+                                     selector: #selector(updateTimer(timer:)),
+                                     userInfo: nil,
+                                     repeats: true)
+    }
+    
+    @objc func updateTimer(timer: Timer) {
+        titleLabel.text = titleStringArray[index]
+        index += 1
+        if index >= titleStringArray.count {
+            index = 0
         }
     }
     

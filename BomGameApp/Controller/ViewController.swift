@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import LTMorphingLabel
 
 class ViewController: UIViewController, UITextFieldDelegate {
 
@@ -18,27 +19,33 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var punishmentGame5: UITextField!
     @IBOutlet weak var timerTextField: UITextField!
     @IBOutlet weak var numExplosions: UITextField!
+    @IBOutlet weak var explanationLabel: LTMorphingLabel!
     
     private let disposeBag = DisposeBag()
     private let pickerView: UIPickerView = UIPickerView()
     private let pickerView2: UIPickerView = UIPickerView()
     private let exposionCountArray = ["1", "2", "3", "4", "5"]
+    private let explanationArray = ["罰ゲームを", "最低一つは", "入力してください!", "でないとゲームを", "始めることができません!"]
     private let targetTabBar = 1
     private let limitExposionCount = 5
     private let limitTimerCount = 60
     private let pickerViewTagOne = 1
+    private var index = 0
     private var timerCount = String()
     private var exposionCount = String()
     private var setValue = SetValue.shared
     private var textFieldList = [UITextField]()
     private var timerCountArray = [Int](0...60)
     private var pickersw = Int()
+    private var timer: Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         timerTextField.text = "0"
         numExplosions.text = "1"
+        explanationLabel.text = explanationArray[index]
+        explanationLabel.morphingEffect = .burn
         tabBarController?.tabBar.items![targetTabBar].isEnabled = false
         totalDelegate_tag()
         pickerView.showsSelectionIndicator = true
@@ -90,6 +97,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
             })
             .disposed(by: disposeBag)
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        timer = Timer.scheduledTimer(timeInterval: 3.0,
+                                     target: self,
+                                     selector: #selector(updateTimer(timer:)),
+                                     userInfo: nil,
+                                     repeats: true)
+    }
+    
+    @objc func updateTimer(timer: Timer) {
+        explanationLabel.text = explanationArray[index]
+        index += 1
+        if index >= explanationArray.count { index = 0 }
     }
     
     /// 画面をタップしてキーボードを閉じる

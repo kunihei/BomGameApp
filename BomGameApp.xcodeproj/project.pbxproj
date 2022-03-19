@@ -85,7 +85,7 @@
 			children = (
 				BAB7B112279A2A5B00F592DB /* Model */,
 				BAB7B111279A2A4A00F592DB /* View */,
-				BAB7B110279A2A3900F592DB /* ViewModel */,
+				BAB7B110279A2A3900F592DB /* Controller */,
 				BA1BA867279843F00054C44C /* Assets.xcassets */,
 				BA1BA86C279843F00054C44C /* Info.plist */,
 				BAAF95F627A669A40064C5AE /* Explosion.mp4 */,
@@ -93,7 +93,7 @@
 			path = BomGameApp;
 			sourceTree = "<group>";
 		};
-		BAB7B110279A2A3900F592DB /* ViewModel */ = {
+		BAB7B110279A2A3900F592DB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				BA1BA85E279843EF0054C44C /* AppDelegate.swift */,
@@ -102,7 +102,7 @@
 				BAB7B115279BDAC200F592DB /* PlayViewController.swift */,
 				BAAF95F427A54E150064C5AE /* PunishmentGameViewController.swift */,
 			);
-			path = ViewModel;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		BAB7B111279A2A4A00F592DB /* View */ = {

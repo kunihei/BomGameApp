@@ -8,5 +8,5 @@ target 'BomGameApp' do
   # Pods for BomGameApp
    pod 'RxSwift'
    pod 'RxCocoa'
-
+   pod 'LTMorphingLabel'
 end

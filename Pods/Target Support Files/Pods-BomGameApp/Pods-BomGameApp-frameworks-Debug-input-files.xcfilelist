@@ -1,4 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-BomGameApp/Pods-BomGameApp-frameworks.sh
+${BUILT_PRODUCTS_DIR}/LTMorphingLabel/LTMorphingLabel.framework
 ${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework
 ${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework
 ${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework

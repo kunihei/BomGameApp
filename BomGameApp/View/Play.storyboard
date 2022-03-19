@@ -205,21 +205,31 @@
                                     <action selector="startButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="B4P-QA-2xo"/>
                                 </connections>
                             </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dJn-Kt-XKB">
+                                <rect key="frame" x="16" y="44" width="343" height="5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="DI2-uv-zzp"/>
+                                    <constraint firstAttribute="height" constant="5" id="oxU-gZ-mcQ"/>
+                                </constraints>
+                            </progressView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="3oZ-JM-lCH" firstAttribute="top" secondItem="rJL-rd-Wbb" secondAttribute="bottom" constant="8" symbolic="YES" id="33M-wJ-CGe"/>
                             <constraint firstItem="TU6-Zi-TaP" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="5ld-JZ-Jll"/>
+                            <constraint firstItem="dJn-Kt-XKB" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="BJF-vm-BTr"/>
                             <constraint firstItem="xcm-fA-a65" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="17" id="D1s-U8-d7m"/>
                             <constraint firstItem="BqY-CZ-vpy" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="29" id="DZt-iV-qze"/>
                             <constraint firstItem="3oZ-JM-lCH" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="JDW-Qe-OYL"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="dJn-Kt-XKB" secondAttribute="trailing" constant="16" id="KTE-Ax-rNB"/>
                             <constraint firstItem="woo-zm-6w3" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="MSi-CP-iCN"/>
                             <constraint firstItem="rJL-rd-Wbb" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="NVG-42-ijP"/>
                             <constraint firstItem="U8C-FG-74R" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="NeB-8m-DPZ"/>
                             <constraint firstItem="rJL-rd-Wbb" firstAttribute="top" secondItem="JtP-o1-wEn" secondAttribute="bottom" constant="8" symbolic="YES" id="WAC-C4-UTI"/>
                             <constraint firstItem="nRw-ig-QQd" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="29" id="Wx4-ks-NLO"/>
                             <constraint firstItem="U8C-FG-74R" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="ZVf-jT-qyO"/>
+                            <constraint firstItem="dJn-Kt-XKB" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="fqn-Qx-kmn"/>
                             <constraint firstItem="nRw-ig-QQd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="g58-xs-Ejj"/>
                             <constraint firstItem="JtP-o1-wEn" firstAttribute="top" secondItem="TU6-Zi-TaP" secondAttribute="bottom" constant="8" symbolic="YES" id="ozi-Mp-NjG"/>
                             <constraint firstItem="TU6-Zi-TaP" firstAttribute="top" secondItem="xcm-fA-a65" secondAttribute="bottom" constant="8" symbolic="YES" id="ubb-Vx-sDL"/>
@@ -262,7 +272,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1804" y="97"/>
+            <point key="canvasLocation" x="1804" y="96.7016491754123"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="72e-1E-8Gw">
