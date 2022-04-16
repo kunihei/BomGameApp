@@ -1,5 +1,6 @@
 PODS:
   - LTMorphingLabel (0.9.3)
+  - MBCircularProgressBar (0.3.5)
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
     - RxSwift (= 6.5.0)
@@ -9,22 +10,25 @@ PODS:
 
 DEPENDENCIES:
   - LTMorphingLabel
+  - MBCircularProgressBar
   - RxCocoa
   - RxSwift
 
 SPEC REPOS:
   trunk:
     - LTMorphingLabel
+    - MBCircularProgressBar
     - RxCocoa
     - RxRelay
     - RxSwift
 
 SPEC CHECKSUMS:
   LTMorphingLabel: f2b256e4fe665aac27f0d0e8ccdcd79590f0cd70
+  MBCircularProgressBar: 0b795b722a5eb5b0923822f90474e2576a1a7855
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
 
-PODFILE CHECKSUM: 95f41b816b5bc6be007b799137f32e7018a6a050
+PODFILE CHECKSUM: 189a71a958aeeff0b9a9026d85dfa980759aa123
 
 COCOAPODS: 1.11.2

@@ -11,7 +11,7 @@ import RxCocoa
 import LTMorphingLabel
 
 class ViewController: UIViewController, UITextFieldDelegate {
-
+    
     @IBOutlet weak var punishmentGame1: UITextField!
     @IBOutlet weak var punishmentGame2: UITextField!
     @IBOutlet weak var punishmentGame3: UITextField!
@@ -35,22 +35,23 @@ class ViewController: UIViewController, UITextFieldDelegate {
     private var exposionCount = String()
     private var setValue = SetValue.shared
     private var textFieldList = [UITextField]()
-    private var timerCountArray = [Int](0...60)
+    private var timerCountArray = [Int]()
     private var pickersw = Int()
     private var timer: Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        for i in 0...25 { if (i % 5) == 0 { timerCountArray.append(i) } }
         initialization()
+        timer = Timer.scheduledTimer(timeInterval: 3.0,
+                                     target: self,
+                                     selector: #selector(updateTimer(timer:)),
+                                     userInfo: nil,
+                                     repeats: true)
         pickerView.showsSelectionIndicator = true
         createDone()
-        textFieldList = [punishmentGame1, punishmentGame2, punishmentGame3, punishmentGame4, punishmentGame5]
         setColor_Border()
-        textFieldList.forEach { textField in
-            textField.delegate = self
-            textField.returnKeyType = .done
-        }
         
         punishmentGame1.rx.controlEvent(.editingDidEnd)
             .asDriver()
@@ -96,11 +97,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        timer = Timer.scheduledTimer(timeInterval: 3.0,
-                                     target: self,
-                                     selector: #selector(updateTimer(timer:)),
-                                     userInfo: nil,
-                                     repeats: true)
+        
+        index = 0
+        explanationLabel.text = explanationArray[index]
     }
     
     @objc func updateTimer(timer: Timer) {
@@ -123,9 +122,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         UITabBar.appearance().tintColor = UIColor.red
         UITabBar.appearance().unselectedItemTintColor = UIColor.white
         textFieldList.forEach { textField in
-            textField.layer.borderColor = UIColor.white.cgColor
-            textField.layer.cornerRadius = 5.0
-            textField.layer.borderWidth = 1.0
+            textField.setUnderLine()
+            textField.delegate = self
+            textField.returnKeyType = .done
         }
     }
     
@@ -136,7 +135,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
         return true
     }
-        
+    
     /// 決定バーの作成
     private func createDone() {
         timerTextField.inputView = pickerView
@@ -154,6 +153,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     /// delegate関係とタグをまとめたメソッド
     private func initialization() {
+        textFieldList = [punishmentGame1, punishmentGame2, punishmentGame3, punishmentGame4, punishmentGame5]
         timerTextField.text = "0"
         numExplosions.text = "1"
         explanationLabel.morphingEffect = .burn

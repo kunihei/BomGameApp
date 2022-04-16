@@ -1,150 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Punishment Game View Controller-->
+        <!--Item-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController storyboardIdentifier="punishment" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="PunishmentGameViewController" customModule="BomGameApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="罰ゲームを発表" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGi-VL-2uu" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
-                                <rect key="frame" x="20" y="44" width="374" height="59"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGi-VL-2uu" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
+                                <rect key="frame" x="20" y="0.0" width="335" height="59"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="335" id="IhG-Uf-VMg"/>
                                     <constraint firstAttribute="height" constant="59" id="wcm-NT-seO"/>
-                                    <constraint firstAttribute="width" constant="374" id="xYc-79-OVs"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                 <color key="textColor" red="0.92128556969999997" green="0.24376736260000001" blue="0.25003415410000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Soh-Mp-qF6">
-                                <rect key="frame" x="20" y="139" width="231" height="71"/>
+                                <rect key="frame" x="20" y="91" width="192" height="69"/>
                                 <color key="backgroundColor" red="1" green="0.09422473217675531" blue="0.10040520420519405" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="231" id="9Us-JN-gGT"/>
-                                    <constraint firstAttribute="height" constant="71" id="kAa-KO-uMA"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="☠️罰ゲーム☠️">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <action selector="displayButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="fBG-LO-VDT"/>
-                                </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWU-F8-zQK">
-                                <rect key="frame" x="163" y="218" width="231" height="71"/>
+                                <rect key="frame" x="163" y="168" width="192" height="69"/>
                                 <color key="backgroundColor" red="1" green="0.094224732180000006" blue="0.1004052042" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="71" id="3qe-kW-tXb"/>
-                                    <constraint firstAttribute="width" constant="231" id="N73-eI-0ny"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="☠️罰ゲーム☠️">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <action selector="displayButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="W83-p6-t5d"/>
-                                </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOF-yH-POX">
-                                <rect key="frame" x="20" y="297" width="231" height="71"/>
+                                <rect key="frame" x="20" y="245" width="192" height="69"/>
                                 <color key="backgroundColor" red="1" green="0.094224732180000006" blue="0.1004052042" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="71" id="AnP-7v-zKw"/>
-                                    <constraint firstAttribute="width" constant="231" id="iG6-3N-CSn"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="☠️罰ゲーム☠️">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <action selector="displayButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="oio-II-KZw"/>
-                                </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aL0-s8-tso">
-                                <rect key="frame" x="163" y="376" width="231" height="71"/>
+                                <rect key="frame" x="163" y="322" width="192" height="69"/>
                                 <color key="backgroundColor" red="1" green="0.094224732180000006" blue="0.1004052042" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="71" id="6dm-XO-N9E"/>
-                                    <constraint firstAttribute="width" constant="231" id="Gag-i7-BfX"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="☠️罰ゲーム☠️">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <action selector="displayButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="nRe-94-AUy"/>
-                                </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FMQ-8I-hPP">
-                                <rect key="frame" x="20" y="455" width="231" height="71"/>
+                                <rect key="frame" x="20" y="399" width="192" height="69"/>
                                 <color key="backgroundColor" red="1" green="0.094224732180000006" blue="0.1004052042" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="231" id="Msx-t4-7f4"/>
-                                    <constraint firstAttribute="height" constant="71" id="UQO-49-1xA"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="☠️罰ゲーム☠️">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <action selector="displayButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="gxp-wf-uYD"/>
-                                </connections>
                             </button>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZG-Av-lvd">
-                                <rect key="frame" x="133" y="573" width="149" height="62"/>
+                                <rect key="frame" x="133" y="493" width="110" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="62" id="4tu-qf-jZF"/>
-                                    <constraint firstAttribute="width" constant="149" id="wwH-2O-hFJ"/>
+                                    <constraint firstAttribute="height" constant="50" id="hzo-eD-T9A"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="ゲームに戻る">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="displayButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="6QL-gI-0uP"/>
+                                </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vsj-Mw-H32">
+                                <rect key="frame" x="27.5" y="568" width="320" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.75129543529999998" blue="0.74112596009999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="21h-vw-0nL"/>
+                                    <constraint firstAttribute="height" constant="50" id="ZoY-oM-jUC"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="LOF-yH-POX" firstAttribute="top" secondItem="fWU-F8-zQK" secondAttribute="bottom" constant="8" symbolic="YES" id="144-R4-amT"/>
-                            <constraint firstItem="FMQ-8I-hPP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="18T-r9-gKe"/>
+                            <constraint firstItem="FMQ-8I-hPP" firstAttribute="top" secondItem="aL0-s8-tso" secondAttribute="bottom" constant="8" id="0Jd-zy-6wz"/>
                             <constraint firstItem="dGi-VL-2uu" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="1Cr-7F-9y9"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="oZG-Av-lvd" secondAttribute="trailing" constant="132" id="6Gl-bc-frh"/>
-                            <constraint firstItem="Soh-Mp-qF6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="6xe-rT-u1x"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="FMQ-8I-hPP" secondAttribute="trailing" constant="163" id="7PG-85-9YH"/>
-                            <constraint firstItem="fWU-F8-zQK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="163" id="9GG-d2-BEd"/>
-                            <constraint firstItem="FMQ-8I-hPP" firstAttribute="top" secondItem="aL0-s8-tso" secondAttribute="bottom" constant="8" symbolic="YES" id="AGa-eZ-jg5"/>
-                            <constraint firstItem="fWU-F8-zQK" firstAttribute="top" secondItem="Soh-Mp-qF6" secondAttribute="bottom" constant="8" symbolic="YES" id="Ad5-YX-WYB"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="aL0-s8-tso" secondAttribute="trailing" constant="20" id="DS5-Rm-sl6"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Soh-Mp-qF6" secondAttribute="trailing" constant="163" id="FSF-Q9-PAA"/>
-                            <constraint firstItem="LOF-yH-POX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="GM9-Ct-8ko"/>
-                            <constraint firstItem="Soh-Mp-qF6" firstAttribute="top" secondItem="dGi-VL-2uu" secondAttribute="bottom" constant="36" id="LZN-FY-3Nx"/>
-                            <constraint firstItem="oZG-Av-lvd" firstAttribute="top" secondItem="FMQ-8I-hPP" secondAttribute="bottom" constant="47" id="bjM-Dt-rJo"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fWU-F8-zQK" secondAttribute="trailing" constant="20" id="1ou-Rm-QDk"/>
+                            <constraint firstItem="aL0-s8-tso" firstAttribute="height" secondItem="Soh-Mp-qF6" secondAttribute="height" id="35g-7f-j3N"/>
+                            <constraint firstItem="FMQ-8I-hPP" firstAttribute="height" secondItem="Soh-Mp-qF6" secondAttribute="height" id="4Ad-Cl-7Of"/>
+                            <constraint firstItem="aL0-s8-tso" firstAttribute="top" secondItem="LOF-yH-POX" secondAttribute="bottom" constant="8" id="9bU-uA-mTf"/>
+                            <constraint firstItem="oZG-Av-lvd" firstAttribute="top" secondItem="FMQ-8I-hPP" secondAttribute="bottom" constant="25" id="Btb-SX-njn"/>
+                            <constraint firstItem="fWU-F8-zQK" firstAttribute="height" secondItem="Soh-Mp-qF6" secondAttribute="height" id="GDV-gO-E3w"/>
+                            <constraint firstItem="LOF-yH-POX" firstAttribute="height" secondItem="Soh-Mp-qF6" secondAttribute="height" id="Hqe-s6-J4q"/>
+                            <constraint firstItem="dGi-VL-2uu" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="I2p-5v-Zdn"/>
+                            <constraint firstItem="oZG-Av-lvd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="133" id="I79-wk-I9b"/>
+                            <constraint firstItem="fWU-F8-zQK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="163" id="KTL-Gh-fli"/>
+                            <constraint firstItem="LOF-yH-POX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="M2w-Tt-wTe"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="FMQ-8I-hPP" secondAttribute="trailing" constant="163" id="PsO-1v-as6"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="aL0-s8-tso" secondAttribute="trailing" constant="20" id="RgT-LZ-w9L"/>
+                            <constraint firstItem="Soh-Mp-qF6" firstAttribute="top" secondItem="dGi-VL-2uu" secondAttribute="bottom" constant="32" id="T9y-kN-yBn"/>
+                            <constraint firstItem="aL0-s8-tso" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="163" id="Uhl-2s-fuu"/>
+                            <constraint firstItem="vsj-Mw-H32" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="W9P-sZ-IgI"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="oZG-Av-lvd" secondAttribute="trailing" constant="132" id="YZZ-xQ-3u6"/>
                             <constraint firstItem="dGi-VL-2uu" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="dNm-8C-xx7"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="LOF-yH-POX" secondAttribute="trailing" constant="163" id="mTp-9g-3XN"/>
-                            <constraint firstItem="aL0-s8-tso" firstAttribute="top" secondItem="LOF-yH-POX" secondAttribute="bottom" constant="8" symbolic="YES" id="nGx-1a-7xH"/>
+                            <constraint firstItem="Soh-Mp-qF6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="eE9-4Z-JEW"/>
+                            <constraint firstItem="fWU-F8-zQK" firstAttribute="top" secondItem="Soh-Mp-qF6" secondAttribute="bottom" constant="8" id="fBb-rB-7l8"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="LOF-yH-POX" secondAttribute="trailing" constant="163" id="foF-zV-r9R"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Soh-Mp-qF6" secondAttribute="trailing" constant="163" id="gcC-p9-Fhb"/>
+                            <constraint firstItem="LOF-yH-POX" firstAttribute="top" secondItem="fWU-F8-zQK" secondAttribute="bottom" constant="8" id="lIJ-sH-2t5"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="dGi-VL-2uu" secondAttribute="trailing" constant="20" id="s0u-aZ-olV"/>
-                            <constraint firstItem="oZG-Av-lvd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="133" id="sMP-oA-cTn"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fWU-F8-zQK" secondAttribute="trailing" constant="20" id="sdu-4z-7ZR"/>
-                            <constraint firstItem="aL0-s8-tso" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="163" id="yR2-Cg-OWr"/>
+                            <constraint firstItem="vsj-Mw-H32" firstAttribute="top" secondItem="oZG-Av-lvd" secondAttribute="bottom" constant="25" id="szS-NV-8hp"/>
+                            <constraint firstItem="vsj-Mw-H32" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="t5r-ar-qk7"/>
+                            <constraint firstItem="FMQ-8I-hPP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="yc5-gy-n5m"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="FDr-EE-sXz"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="backButton" destination="oZG-Av-lvd" id="tsi-GF-31g"/>
                         <outlet property="punishmentButton1" destination="Soh-Mp-qF6" id="9mi-KR-xsA"/>
@@ -160,4 +145,7 @@
             <point key="canvasLocation" x="34.782608695652179" y="66.964285714285708"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="dGi-VL-2uu"/>
+    </designables>
 </document>

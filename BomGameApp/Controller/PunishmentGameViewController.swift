@@ -33,7 +33,16 @@ class PunishmentGameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.isNavigationBarHidden = true
+        titleLabel.text = titleStringArray[index]
         titleLabel.morphingEffect = .burn
+        timer = Timer.scheduledTimer(
+            timeInterval: 3.0,
+            target: self,
+            selector: #selector(updateTimer(timer:)),
+            userInfo: nil,
+            repeats: true
+        )
         punishmentButtonList = [
             punishmentButton1,
             punishmentButton2,
@@ -50,41 +59,41 @@ class PunishmentGameViewController: UIViewController {
         }
         
         punishmentButtonList.forEach { button in
+            button.titleLabel?.numberOfLines = 0
+            if !setValue.selectedFlag { button.isEnabled = true}
             button.rx.tap
                 .asDriver()
                 .drive(onNext: { [weak self] _ in
-                    self?.flipButton(button: button, title: (self?.setValue.punishmentGamesList[button.tag])!)
-                    button.isEnabled = false
-                    self?.firstTapBtn = button.tag
-                    if button.tag == self?.firstTapBtn {
-                        self?.setValue.selectedTagArray.append(self!.firstTapBtn)
-                        self?.setValue.selectedFlag = true
-                        self?.punishmentButtonList.forEach { button2 in
-                            button2.isEnabled = false
-                        }
-                    }
+                    self?.flipButton(
+                        button: button,
+                        title: (self?.setValue.punishmentGamesList[button.tag])!
+                    )
+                    self?.setSelectedButton(button: button)
                 })
                 .disposed(by: disposeBag)
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        timer = Timer.scheduledTimer(timeInterval: 3.0,
-                                     target: self,
-                                     selector: #selector(updateTimer(timer:)),
-                                     userInfo: nil,
-                                     repeats: true)
-    }
-    
     @objc func updateTimer(timer: Timer) {
         titleLabel.text = titleStringArray[index]
         index += 1
-        if index >= titleStringArray.count {
-            index = 0
+        if index >= titleStringArray.count { index = 0 }
+    }
+    
+    // タップしたボタン非表示、初回タップした値セット
+    private func setSelectedButton(button: UIButton) {
+        button.isEnabled = false
+        firstTapBtn = button.tag
+        if button.tag == firstTapBtn {
+            setValue.selectedTagArray.append(firstTapBtn)
+            setValue.selectedFlag = true
+            punishmentButtonList.forEach { button2 in
+                button2.isEnabled = false
+            }
         }
     }
     
+    // タップされたボタンに初期からその罰ゲームを表示
     private func selectedButtnSetTitle() {
         if setValue.selectedFlag {
             for tmp in 0..<setValue.selectedTagArray.count {
@@ -95,6 +104,7 @@ class PunishmentGameViewController: UIViewController {
         }
     }
     
+    // 罰ゲームをシャッフル
     private func firstShuffle() {
         if setValue.firstShuffleFlag {
             let tmpPunishmentGamesList = setValue.punishmentGames
@@ -104,6 +114,7 @@ class PunishmentGameViewController: UIViewController {
         }
     }
     
+    // フリップアニメーション実装
     private func flipButton(button: UIButton, title: String) {
         let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation.y")
         rotationAnimation.toValue = CGFloat(Double.pi / 180) * 360
@@ -116,6 +127,7 @@ class PunishmentGameViewController: UIViewController {
     }
     
     @IBAction func displayButton(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
     }
     
     /*

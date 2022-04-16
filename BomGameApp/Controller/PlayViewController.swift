@@ -10,10 +10,12 @@ import RxSwift
 import RxCocoa
 import AVFoundation
 import AVKit
+import MBCircularProgressBar
 
 class PlayViewController: UIViewController {
     
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var progressView: MBCircularProgressBarView!
     @IBOutlet weak var reset: UIButton!
     @IBOutlet weak var start: UIButton!
     @IBOutlet weak var bom1: UIButton!
@@ -42,8 +44,8 @@ class PlayViewController: UIViewController {
     private let bundleDataName: String = "Explosion"
     private let bundleDataType: String = "mp4"
     
-    private var timer = Timer()
-    var videoPlayer: AVPlayer!
+    private var countDownTimer = Timer()
+    private var videoPlayer: AVPlayer!
     private var setValue = SetValue.shared
     private var numberOfExplosions: [Int] = []
     private var tmpNumberOfExplosions: [Int] = []
@@ -51,10 +53,14 @@ class PlayViewController: UIViewController {
     private var bomButtons: [UIButton] = []
     private var timerCount = Int()
     private var numExplosionCount = Int()
+    private var changeYellowCount = Int()
+    private var changeRedCount = Int()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        reset.isHidden = true
         bomButtons = [
             bom1,  bom2,  bom3,  bom4,
             bom5,  bom6,  bom7,  bom8,
@@ -86,7 +92,8 @@ class PlayViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        timerCount = setValue.timerCount
+        setTimer()
+        navigationController?.isNavigationBarHidden = true
         numExplosionCount = setValue.numExplosions
         notLimitTime()
     }
@@ -95,10 +102,10 @@ class PlayViewController: UIViewController {
         bomButtons.forEach { bom in
             bom.isEnabled = true
         }
-        
         if timerCount != zeroCount {
-            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+            countDownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
         }
+        
         for i in 1...20 { tmpNumberOfExplosions.append(i) }
         for _ in 0..<numExplosionCount {
             let ramdomInt = Int.random(in: 0..<tmpNumberOfExplosions.count)
@@ -106,59 +113,60 @@ class PlayViewController: UIViewController {
             tmpNumberOfExplosions.remove(at: ramdomInt)
         }
         start.isHidden = true
+        reset.isHidden = false
     }
     
     // タイマーのカウンドダウン
     @objc private func updateTimer() {
         timerCount -= 1
+        progressView.value = CGFloat(timerCount)
         if timerCount == zeroCount {
-            timerLabel.text = "時間切れ"
-            timer.invalidate()
-        } else {
+            countDownTimer.invalidate()
+            let storyboard = UIStoryboard(name: "PunishmentGameDialog", bundle: nil)
+            let punishmentGameDialogVC = storyboard.instantiateViewController(withIdentifier: "punishmentDialog") as! PunishmentGameDialog
+            movePunishment(controller: punishmentGameDialogVC)
+        } else if timerCount <= 5 {
+            setupProgressColor(color: .red)
             timerLabel.text = "残り\(timerCount)秒"
+        } else if timerCount <= changeYellowCount {
+            setupProgressColor(color: .yellow)
+            timerLabel.text = "\(timerCount)秒"
+        } else {
+            setupProgressColor(color: .green)
+            timerLabel.text = "\(timerCount)秒"
         }
+    }
+    
+    // タイマーの初期表示とプログレスバーの色変更数値設定
+    private func setTimer() {
+        timerCount = setValue.timerCount
+        changeYellowCount = timerCount / 2
+        changeRedCount = 5
+        judgLabel()
+    }
+    
+    // プログレスバーの色設定
+    private func setupProgressColor(color: UIColor) {
+        progressView.progressColor = color
+        progressView.progressStrokeColor = color
     }
     
     // 爆破するか判断
     private func checkTheBom(tag: Int) {
         numberOfExplosions.forEach { numExplo in
             if tag == numExplo {
-                timerLabel.text = "爆発しました"
-                timer.invalidate()
-                movePunishment()
-                //                let moviePath: String? = Bundle.main.path(forResource: bundleDataName, ofType: bundleDataType)
-                //                playMovieFromPath(moviePath: moviePath)
-                //                playMovieSetup(path: bundleDataName, type: bundleDataType)
-                //                videoPlayer.play()
+                countDownTimer.invalidate()
+                setValue.countExplosions += 1
+                let storyboard = UIStoryboard(name: "PunishmentGame", bundle: nil)
+                let punishmentGameVC = storyboard.instantiateViewController(withIdentifier: "punishment") as! PunishmentGameViewController
+                movePunishment(controller: punishmentGameVC)
             }
         }
         bomButtons[tag - 1].isHidden = true
     }
     
-    // 動作再生画面作成
-    //    func playMovieSetup(path: String, type: String) {
-    //        // Create AVPlayerItem
-    //        guard let path = Bundle.main.path(forResource: path, ofType: type) else {
-    //            fatalError("Movie file can not find.")
-    //        }
-    //        let fileURL = URL(fileURLWithPath: path)
-    //        let avAsset = AVURLAsset(url: fileURL)
-    //        let playerItem: AVPlayerItem = AVPlayerItem(asset: avAsset)
-    //
-    //        // Create AVPlayer
-    //        videoPlayer = AVPlayer(playerItem: playerItem)
-    //
-    //        // Add AVPlayer
-    //        let layer = AVPlayerLayer()
-    //        layer.videoGravity = AVLayerVideoGravity.resizeAspect
-    //        layer.player = videoPlayer
-    //        layer.frame = view.bounds
-    //        view.layer.addSublayer(layer)
-    //    }
-    
-    private func movePunishment() {
-        let storyboard = UIStoryboard(name: "PunishmentGame", bundle: nil)
-        let punishmentGameVC = storyboard.instantiateViewController(withIdentifier: "punishment") as! PunishmentGameViewController
+    // 画面遷移アニメーション
+    private func movePunishment(controller: UIViewController) {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
         view.alpha = 0
         view.backgroundColor = .white
@@ -167,7 +175,7 @@ class PlayViewController: UIViewController {
             view.alpha = 1.0
         } completion: { (Bool) in
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                self.navigationController?.pushViewController(punishmentGameVC, animated: false)
+                self.navigationController?.pushViewController(controller, animated: false)
             }
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 view.removeFromSuperview()
@@ -177,27 +185,47 @@ class PlayViewController: UIViewController {
     
     // 全て初期状態に戻す
     private func allReset() {
+        numberOfExplosions = []
+        tmpNumberOfExplosions = []
+        setValue.selectedTagArray = []
+        setValue.punishmentGamesList = []
+        start.isHidden = false
+        reset.isHidden = true
+        setValue.selectedFlag = false
         setValue.firstShuffleFlag = true
         bomButtons.forEach { bom in
             bom.isHidden = false
         }
-        
         timerCount = setValue.timerCount
-        numberOfExplosions = []
-        tmpNumberOfExplosions = []
+        setupProgressColor(color: .green)
+        judgLabel()
         notLimitTime()
-        timer.invalidate()
-        start.isHidden = false
+        countDownTimer.invalidate()
+    }
+    
+    // タイマーラベルの文言判定
+    private func judgLabel() {
+        if timerCount == changeRedCount {
+            setupProgressColor(color: .red)
+            timerLabel.text = "残り\(timerCount)秒"
+        } else {
+            setupProgressColor(color: .green)
+            timerLabel.text = "\(timerCount)秒"
+        }
     }
     
     // 制限時間の有無
     private func notLimitTime() {
         if timerCount == zeroCount {
-            timerLabel.text = "制限時間なし"
-            timerLabel.font = timerLabel.font.withSize(20)
+            timerLabel.isHidden = true
+            progressView.isHidden = true
         } else {
-            timerLabel.text = "残り\(timerCount)秒"
-            timerLabel.font = timerLabel.font.withSize(25)
+            timerLabel.isHidden = false
+            progressView.isHidden = false
+            progressView.value = CGFloat(timerCount)
+            progressView.maxValue = CGFloat(timerCount)
+            timerLabel.numberOfLines = 0
+            timerLabel.font = timerLabel.font.withSize(15)
         }
     }
     

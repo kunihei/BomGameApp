@@ -14,10 +14,12 @@ class SetValue {
     var punishmentGames = [String: String]()
     var punishmentGamesList: [String] = []
     var selectedTagArray = [Int]()
+    var totalNumExplosions = 0
     var firstShuffleFlag = true
     var selectedFlag = false
     var timerStopFlag = true
     var numExplosions = 1
+    var countExplosions = 0
     var timerCount = 0
 }
 

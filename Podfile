@@ -9,4 +9,5 @@ target 'BomGameApp' do
    pod 'RxSwift'
    pod 'RxCocoa'
    pod 'LTMorphingLabel'
+   pod "MBCircularProgressBar"
 end

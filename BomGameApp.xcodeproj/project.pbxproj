@@ -8,13 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		911B3015BE07C98BC208A821 /* Pods_BomGameApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A60B66AB2B57A319C321F3FB /* Pods_BomGameApp.framework */; };
+		BA16E45D27F96A0400053FE0 /* PunishmentGameDialog.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA16E45C27F96A0400053FE0 /* PunishmentGameDialog.storyboard */; };
+		BA16E45F27F96AE500053FE0 /* PunishmentGameDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA16E45E27F96AE500053FE0 /* PunishmentGameDialog.swift */; };
 		BA1BA85F279843EF0054C44C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1BA85E279843EF0054C44C /* AppDelegate.swift */; };
 		BA1BA861279843EF0054C44C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1BA860279843EF0054C44C /* SceneDelegate.swift */; };
 		BA1BA863279843EF0054C44C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1BA862279843EF0054C44C /* ViewController.swift */; };
 		BA1BA866279843EF0054C44C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA1BA864279843EF0054C44C /* Main.storyboard */; };
 		BA1BA868279843F00054C44C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA1BA867279843F00054C44C /* Assets.xcassets */; };
 		BA1BA86B279843F00054C44C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA1BA869279843F00054C44C /* LaunchScreen.storyboard */; };
+		BA35D2FE27E9F4DF00AF120F /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA35D2FD27E9F4DF00AF120F /* TextField.swift */; };
 		BA674EBC279EECBE00581457 /* SetValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA674EBB279EECBE00581457 /* SetValue.swift */; };
+		BA81701E280A5762002A94BF /* FinishGameDialog.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA81701D280A5762002A94BF /* FinishGameDialog.storyboard */; };
+		BA817020280A57A9002A94BF /* FinishGameDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA81701F280A57A9002A94BF /* FinishGameDialog.swift */; };
 		BA9B6DD427E56DD800860D56 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BA9B6DD327E56DD800860D56 /* Settings.bundle */; };
 		BAAF95F327A54DE50064C5AE /* PunishmentGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAAF95F227A54DE50064C5AE /* PunishmentGame.storyboard */; };
 		BAAF95F527A54E150064C5AE /* PunishmentGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAF95F427A54E150064C5AE /* PunishmentGameViewController.swift */; };
@@ -27,6 +32,8 @@
 		2E7B89986823A74A7EDFAA0B /* Pods-BomGameApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BomGameApp.debug.xcconfig"; path = "Target Support Files/Pods-BomGameApp/Pods-BomGameApp.debug.xcconfig"; sourceTree = "<group>"; };
 		A60B66AB2B57A319C321F3FB /* Pods_BomGameApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BomGameApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE5D7A6D46C66B2E52D1FBFF /* Pods-BomGameApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BomGameApp.release.xcconfig"; path = "Target Support Files/Pods-BomGameApp/Pods-BomGameApp.release.xcconfig"; sourceTree = "<group>"; };
+		BA16E45C27F96A0400053FE0 /* PunishmentGameDialog.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PunishmentGameDialog.storyboard; sourceTree = "<group>"; };
+		BA16E45E27F96AE500053FE0 /* PunishmentGameDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PunishmentGameDialog.swift; sourceTree = "<group>"; };
 		BA1BA85B279843EF0054C44C /* BomGameApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BomGameApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA1BA85E279843EF0054C44C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA1BA860279843EF0054C44C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,7 +42,10 @@
 		BA1BA867279843F00054C44C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA1BA86A279843F00054C44C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA1BA86C279843F00054C44C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA35D2FD27E9F4DF00AF120F /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		BA674EBB279EECBE00581457 /* SetValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetValue.swift; sourceTree = "<group>"; };
+		BA81701D280A5762002A94BF /* FinishGameDialog.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FinishGameDialog.storyboard; sourceTree = "<group>"; };
+		BA81701F280A57A9002A94BF /* FinishGameDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishGameDialog.swift; sourceTree = "<group>"; };
 		BA9B6DD327E56DD800860D56 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		BAAF95F227A54DE50064C5AE /* PunishmentGame.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PunishmentGame.storyboard; sourceTree = "<group>"; };
 		BAAF95F427A54E150064C5AE /* PunishmentGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PunishmentGameViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +95,7 @@
 		BA1BA85D279843EF0054C44C /* BomGameApp */ = {
 			isa = PBXGroup;
 			children = (
+				BA35D2FC27E9F48900AF120F /* Extension */,
 				BAB7B112279A2A5B00F592DB /* Model */,
 				BAB7B111279A2A4A00F592DB /* View */,
 				BAB7B110279A2A3900F592DB /* Controller */,
@@ -96,6 +107,14 @@
 			path = BomGameApp;
 			sourceTree = "<group>";
 		};
+		BA35D2FC27E9F48900AF120F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				BA35D2FD27E9F4DF00AF120F /* TextField.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		BAB7B110279A2A3900F592DB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +123,8 @@
 				BA1BA862279843EF0054C44C /* ViewController.swift */,
 				BAB7B115279BDAC200F592DB /* PlayViewController.swift */,
 				BAAF95F427A54E150064C5AE /* PunishmentGameViewController.swift */,
+				BA16E45E27F96AE500053FE0 /* PunishmentGameDialog.swift */,
+				BA81701F280A57A9002A94BF /* FinishGameDialog.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -115,6 +136,8 @@
 				BA1BA864279843EF0054C44C /* Main.storyboard */,
 				BAB7B113279A2A6E00F592DB /* Play.storyboard */,
 				BAAF95F227A54DE50064C5AE /* PunishmentGame.storyboard */,
+				BA16E45C27F96A0400053FE0 /* PunishmentGameDialog.storyboard */,
+				BA81701D280A5762002A94BF /* FinishGameDialog.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -199,6 +222,8 @@
 				BAAF95F727A68C060064C5AE /* Explosion.mp4 in Resources */,
 				BAB7B114279A2A6E00F592DB /* Play.storyboard in Resources */,
 				BA1BA86B279843F00054C44C /* LaunchScreen.storyboard in Resources */,
+				BA16E45D27F96A0400053FE0 /* PunishmentGameDialog.storyboard in Resources */,
+				BA81701E280A5762002A94BF /* FinishGameDialog.storyboard in Resources */,
 				BA1BA868279843F00054C44C /* Assets.xcassets in Resources */,
 				BA1BA866279843EF0054C44C /* Main.storyboard in Resources */,
 				BAAF95F327A54DE50064C5AE /* PunishmentGame.storyboard in Resources */,
@@ -257,8 +282,11 @@
 			files = (
 				BAB7B116279BDAC200F592DB /* PlayViewController.swift in Sources */,
 				BAAF95F527A54E150064C5AE /* PunishmentGameViewController.swift in Sources */,
+				BA16E45F27F96AE500053FE0 /* PunishmentGameDialog.swift in Sources */,
 				BA674EBC279EECBE00581457 /* SetValue.swift in Sources */,
+				BA35D2FE27E9F4DF00AF120F /* TextField.swift in Sources */,
 				BA1BA863279843EF0054C44C /* ViewController.swift in Sources */,
+				BA817020280A57A9002A94BF /* FinishGameDialog.swift in Sources */,
 				BA1BA85F279843EF0054C44C /* AppDelegate.swift in Sources */,
 				BA1BA861279843EF0054C44C /* SceneDelegate.swift in Sources */,
 			);
@@ -418,6 +446,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -447,6 +476,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
