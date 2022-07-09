@@ -54,7 +54,7 @@ class PunishmentGameViewController: UIViewController {
         firstShuffle()
         
         for tmp in 0..<punishmentButtonList.count {
-            if tmp >= 0 && tmp < setValue.punishmentGamesList.count { continue }
+            if tmp >= 0 && tmp < setValue.displayButtonPunishmentGames.count { continue }
             punishmentButtonList[tmp].isHidden = true
         }
         
@@ -66,9 +66,10 @@ class PunishmentGameViewController: UIViewController {
                 .drive(onNext: { [weak self] _ in
                     self?.flipButton(
                         button: button,
-                        title: (self?.setValue.punishmentGamesList[button.tag])!
+                        title: (self?.setValue.displayButtonPunishmentGames[button.tag])!
                     )
                     self?.setSelectedButton(button: button)
+                    self?.setValue.numberPunishmentGamesDisplayed -= 1
                 })
                 .disposed(by: disposeBag)
         }
@@ -99,7 +100,7 @@ class PunishmentGameViewController: UIViewController {
             for tmp in 0..<setValue.selectedTagArray.count {
                 let selectedTag = setValue.selectedTagArray[tmp]
                 punishmentButtonList[selectedTag].isEnabled = false
-                punishmentButtonList[selectedTag].setTitle(setValue.punishmentGamesList[selectedTag], for: .normal)
+                punishmentButtonList[selectedTag].setTitle(setValue.displayButtonPunishmentGames[selectedTag], for: .normal)
             }
         }
     }
@@ -107,9 +108,9 @@ class PunishmentGameViewController: UIViewController {
     // 罰ゲームをシャッフル
     private func firstShuffle() {
         if setValue.firstShuffleFlag {
-            let tmpPunishmentGamesList = setValue.punishmentGames
-            for (key, val) in tmpPunishmentGamesList { setValue.punishmentGamesList.append(val) }
-            setValue.punishmentGamesList.shuffle()
+            let tmpPunishmentGamesList = setValue.initPunishmentGames
+            for (key, val) in tmpPunishmentGamesList { setValue.displayButtonPunishmentGames.append(val) }
+            setValue.displayButtonPunishmentGames.shuffle()
             setValue.firstShuffleFlag = false
         }
     }

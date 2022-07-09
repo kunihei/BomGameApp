@@ -49,7 +49,6 @@ class PlayViewController: UIViewController {
     private var setValue = SetValue.shared
     private var numberOfExplosions: [Int] = []
     private var tmpNumberOfExplosions: [Int] = []
-    private var punishmentGames: [String] = []
     private var bomButtons: [UIButton] = []
     private var timerCount = Int()
     private var numExplosionCount = Int()
@@ -94,7 +93,11 @@ class PlayViewController: UIViewController {
         
         setTimer()
         navigationController?.isNavigationBarHidden = true
-        numExplosionCount = setValue.numExplosions
+        numExplosionCount = setValue.initNumExplosions
+        if setValue.firstSetPubnishCountFlag {
+            setValue.numberPunishmentGamesDisplayed = setValue.initPunishmentGames.count
+            setValue.firstSetPubnishCountFlag = false
+        }
         notLimitTime()
     }
     
@@ -106,6 +109,7 @@ class PlayViewController: UIViewController {
             countDownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
         }
         
+        // 爆発箇所が被らない様にする処理
         for i in 1...20 { tmpNumberOfExplosions.append(i) }
         for _ in 0..<numExplosionCount {
             let ramdomInt = Int.random(in: 0..<tmpNumberOfExplosions.count)
@@ -124,7 +128,7 @@ class PlayViewController: UIViewController {
             countDownTimer.invalidate()
             let storyboard = UIStoryboard(name: "PunishmentGameDialog", bundle: nil)
             let punishmentGameDialogVC = storyboard.instantiateViewController(withIdentifier: "punishmentDialog") as! PunishmentGameDialog
-            movePunishment(controller: punishmentGameDialogVC)
+            moveView(controller: punishmentGameDialogVC)
         } else if timerCount <= 5 {
             setupProgressColor(color: .red)
             timerLabel.text = "残り\(timerCount)秒"
@@ -157,16 +161,25 @@ class PlayViewController: UIViewController {
             if tag == numExplo {
                 countDownTimer.invalidate()
                 setValue.countExplosions += 1
+                print("kuni_countExplosions:\(setValue.countExplosions)")
+                print("kuni_initNumExplosions:\(setValue.initNumExplosions)")
+                print("kuni_numberPunishmentGamesDisplayed:\(setValue.numberPunishmentGamesDisplayed)")
+                if setValue.countExplosions == setValue.initNumExplosions && setValue.numberPunishmentGamesDisplayed == 0 {
+                    let storyboard = UIStoryboard(name: "FinishGameDialog", bundle: nil)
+                    let finishDialog = storyboard.instantiateViewController(withIdentifier: "finishDialog") as! FinishGameDialog
+                    moveView(controller: finishDialog)
+                    return
+                }
                 let storyboard = UIStoryboard(name: "PunishmentGame", bundle: nil)
                 let punishmentGameVC = storyboard.instantiateViewController(withIdentifier: "punishment") as! PunishmentGameViewController
-                movePunishment(controller: punishmentGameVC)
+                moveView(controller: punishmentGameVC)
             }
         }
         bomButtons[tag - 1].isHidden = true
     }
     
     // 画面遷移アニメーション
-    private func movePunishment(controller: UIViewController) {
+    private func moveView(controller: UIViewController) {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
         view.alpha = 0
         view.backgroundColor = .white
@@ -188,13 +201,15 @@ class PlayViewController: UIViewController {
         numberOfExplosions = []
         tmpNumberOfExplosions = []
         setValue.selectedTagArray = []
-        setValue.punishmentGamesList = []
+        setValue.displayButtonPunishmentGames = []
+        setValue.firstSetPubnishCountFlag = false
         start.isHidden = false
         reset.isHidden = true
         setValue.selectedFlag = false
         setValue.firstShuffleFlag = true
         bomButtons.forEach { bom in
             bom.isHidden = false
+            bom.isEnabled = false
         }
         timerCount = setValue.timerCount
         setupProgressColor(color: .green)

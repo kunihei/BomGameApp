@@ -11,14 +11,15 @@ class SetValue {
     private init() {}
     static let shared = SetValue()
     
-    var punishmentGames = [String: String]()
-    var punishmentGamesList: [String] = []
+    var initPunishmentGames = [String: String]()
+    var displayButtonPunishmentGames = [String]()
     var selectedTagArray = [Int]()
-    var totalNumExplosions = 0
+    var numberPunishmentGamesDisplayed = 0
     var firstShuffleFlag = true
+    var firstSetPubnishCountFlag = true
     var selectedFlag = false
     var timerStopFlag = true
-    var numExplosions = 1
+    var initNumExplosions = 1
     var countExplosions = 0
     var timerCount = 0
 }

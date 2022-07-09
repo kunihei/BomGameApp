@@ -131,6 +131,7 @@
                         <outlet property="punishmentGameLabel2" destination="XqN-Rv-QvH" id="mZA-rh-jof"/>
                         <outlet property="punishmentGameLabel3" destination="lrY-xz-Qzv" id="zDN-w8-JRR"/>
                         <outlet property="punishmentGameLabel4" destination="KKC-mK-sb8" id="ton-uS-u1K"/>
+                        <outlet property="punishmentGameLabel5" destination="CHZ-H7-Dpv" id="ijD-HU-9aR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -15,6 +15,7 @@ class PunishmentGameDialog: UIViewController {
     @IBOutlet weak var punishmentGameLabel2: UILabel!
     @IBOutlet weak var punishmentGameLabel3: UILabel!
     @IBOutlet weak var punishmentGameLabel4: UILabel!
+    @IBOutlet weak var punishmentGameLabel5: UILabel!
     
     private let titleLabelArray = ["時間が切れたので", "あなたひとりで", "全ての罰ゲームを", "実行してください☠️"]
     private let setValue = SetValue.shared
@@ -31,15 +32,16 @@ class PunishmentGameDialog: UIViewController {
             punishmentGameLabel1,
             punishmentGameLabel2,
             punishmentGameLabel3,
-            punishmentGameLabel4
+            punishmentGameLabel4,
+            punishmentGameLabel5
         ]
-        if setValue.punishmentGamesList.count == 0 {
-            let tmpPunishmentGameList = setValue.punishmentGames
-            for (key, val) in tmpPunishmentGameList { setValue.punishmentGamesList.append(val) }
+        if setValue.displayButtonPunishmentGames.count == 0 {
+            let tmpPunishmentGameList = setValue.initPunishmentGames
+            for (key, val) in tmpPunishmentGameList { setValue.displayButtonPunishmentGames.append(val) }
         }
         
         for tmp in 0..<arrayLabel.count {
-            if tmp >= 0 && tmp < setValue.punishmentGamesList.count {
+            if tmp >= 0 && tmp < setValue.displayButtonPunishmentGames.count {
                 outputArrayLabel.append(arrayLabel[tmp])
                 continue
             }
@@ -47,12 +49,12 @@ class PunishmentGameDialog: UIViewController {
         }
         
         for i in 0..<outputArrayLabel.count {
-            outputArrayLabel[i].text = setValue.punishmentGamesList[i]
+            outputArrayLabel[i].text = setValue.displayButtonPunishmentGames[i]
         }
         
         punishmentExplanationLabel.text = titleLabelArray[index]
         punishmentExplanationLabel.morphingEffect = .burn
-        timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(updateTimer(timer:)), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(updateTimer(timer:)), userInfo: nil, repeats: true)
         // Do any additional setup after loading the view.
     }
     

@@ -29,7 +29,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     private let targetTabBar = 1
     private let limitExposionCount = 5
     private let limitTimerCount = 60
-    private let pickerViewTagOne = 1
+    private let pickerViewTagOne = 5
     private var index = 0
     private var timerCount = String()
     private var exposionCount = String()
@@ -42,7 +42,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for i in 0...25 { if (i % 5) == 0 { timerCountArray.append(i) } }
+        for i in 0...25 {
+            if (i % 5) == 0 {
+                timerCountArray.append(i)
+            }
+        }
         initialization()
         timer = Timer.scheduledTimer(timeInterval: 3.0,
                                      target: self,
@@ -52,47 +56,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
         pickerView.showsSelectionIndicator = true
         createDone()
         setColor_Border()
-        
-        punishmentGame1.rx.controlEvent(.editingDidEnd)
-            .asDriver()
-            .drive(onNext: { [weak self] _ in
-                self?.setValue.punishmentGames.updateValue(self?.punishmentGame1.text ?? "なし", forKey: "0")
-                self?.checkTabButton(punishmentGamesText: (self?.setValue.punishmentGames["0"])!)
-            })
-            .disposed(by: disposeBag)
-        
-        punishmentGame2.rx.controlEvent(.editingDidEnd)
-            .asDriver()
-            .drive(onNext: { [weak self] _ in
-                self?.setValue.punishmentGames.updateValue(self?.punishmentGame2.text ?? "なし", forKey: "1")
-                self?.checkTabButton(punishmentGamesText: (self?.setValue.punishmentGames["1"])!)
-            })
-            .disposed(by: disposeBag)
-        
-        punishmentGame3.rx.controlEvent(.editingDidEnd)
-            .asDriver()
-            .drive(onNext: { [weak self] _ in
-                self?.setValue.punishmentGames.updateValue(self?.punishmentGame3.text ?? "なし", forKey: "2")
-                self?.checkTabButton(punishmentGamesText: (self?.setValue.punishmentGames["2"])!)
-            })
-            .disposed(by: disposeBag)
-        
-        punishmentGame4.rx.controlEvent(.editingDidEnd)
-            .asDriver()
-            .drive(onNext: { [weak self] _ in
-                self?.setValue.punishmentGames.updateValue(self?.punishmentGame4.text ?? "なし", forKey: "3")
-                self?.checkTabButton(punishmentGamesText: (self?.setValue.punishmentGames["3"])!)
-            })
-            .disposed(by: disposeBag)
-        
-        punishmentGame5.rx.controlEvent(.editingDidEnd)
-            .asDriver()
-            .drive(onNext: { [weak self] _ in
-                self?.setValue.punishmentGames.updateValue(self?.punishmentGame5.text ?? "なし", forKey: "4")
-                self?.checkTabButton(punishmentGamesText: (self?.setValue.punishmentGames["4"])!)
-            })
-            .disposed(by: disposeBag)
-        // Do any additional setup after loading the view.
+        textFieldList.forEach { textField in
+            textField.rx.controlEvent(.editingDidEnd)
+                .asDriver()
+                .drive(onNext: { [weak self] _ in
+                    if textField.text != "" {
+                        self?.setValue.initPunishmentGames.updateValue(textField.text!, forKey: "\(textField.tag)")
+                    }
+                    self?.checkTabButton()
+                })
+                .disposed(by: disposeBag)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -162,8 +136,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         pickerView.dataSource = self
         pickerView2.delegate = self
         pickerView2.dataSource = self
-        pickerView.tag = 1
-        pickerView2.tag = 2
+        pickerView.tag = 5
+        pickerView2.tag = 6
     }
     
     /// アラートの表示の設定
@@ -178,12 +152,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     /// 条件クリアでタブボタン押せる
-    private func checkTabButton(punishmentGamesText: String) {
-        if punishmentGamesText != "" {
-            self.tabBarController?.tabBar.items![targetTabBar].isEnabled = true
-        } else {
+    private func checkTabButton() {
+        print("kuni_initPunishmentGamesCount:\(setValue.initPunishmentGames.count)")
+        print("kuni_initPunishmentGames:\(setValue.initPunishmentGames)")
+        if setValue.initPunishmentGames.count == 0 {
             self.tabBarController?.tabBar.items![targetTabBar].isEnabled = false
             alert(title: "注意", body: "罰ゲーム文を最低1つは記入してください！", button: "OK")
+        } else {
+            self.tabBarController?.tabBar.items![targetTabBar].isEnabled = true
+            
         }
     }
     
@@ -195,7 +172,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         } else {
             numExplosions.text = "\(exposionCountArray[pickerView2.selectedRow(inComponent: 0)])"
             exposionCount = numExplosions.text ?? "1"
-            setValue.numExplosions = Int(exposionCount) ?? 1
+            setValue.initNumExplosions = Int(exposionCount) ?? 1
         }
         view.endEditing(true)
     }
@@ -223,10 +200,10 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView.tag == pickerViewTagOne {
-            pickersw = 1
+            pickersw = 5
             return String(timerCountArray[row])
         } else {
-            pickersw = 2
+            pickersw = 6
             return exposionCountArray[row]
         }
     }
