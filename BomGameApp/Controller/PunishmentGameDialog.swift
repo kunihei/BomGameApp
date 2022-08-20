@@ -7,6 +7,7 @@
 
 import UIKit
 import LTMorphingLabel
+import GoogleMobileAds
 
 class PunishmentGameDialog: UIViewController {
 
@@ -16,6 +17,7 @@ class PunishmentGameDialog: UIViewController {
     @IBOutlet weak var punishmentGameLabel3: UILabel!
     @IBOutlet weak var punishmentGameLabel4: UILabel!
     @IBOutlet weak var punishmentGameLabel5: UILabel!
+    @IBOutlet weak var bannerView: GADBannerView!
     
     private let titleLabelArray = ["時間が切れたので", "あなたひとりで", "全ての罰ゲームを", "実行してください☠️"]
     private let setValue = SetValue.shared
@@ -24,9 +26,29 @@ class PunishmentGameDialog: UIViewController {
     private var arrayLabel = [UILabel]()
     private var timer: Timer?
     private var index = 0
+    private var interstitial: GADInterstitialAd?
+    private var interstitialID: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+#if DEBUG
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/6300978111"
+        interstitialID = "ca-app-pub-3940256099942544/4411468910"
+#else
+        bannerView.adUnitID = "ca-app-pub-3279976203462809/8264860330"
+        interstitialID = "ca-app-pub-3279976203462809/8264860330"
+#endif
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+        GADInterstitialAd.load(withAdUnitID: interstitialID ?? "", request: GADRequest()) { [weak self] (ad, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            self?.interstitial = ad
+        }
+        
+        
         
         arrayLabel = [
             punishmentGameLabel1,
@@ -64,6 +86,11 @@ class PunishmentGameDialog: UIViewController {
         if index >= titleLabelArray.count { index = 0 }
     }
 
+    @IBAction func backButton(_ sender: Any) {
+        setValue.resetFlag = true
+        interstitial?.present(fromRootViewController: self)
+        self.navigationController?.popToRootViewController(animated: true)
+    }
     /*
     // MARK: - Navigation
 

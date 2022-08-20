@@ -337,9 +337,9 @@
                                     <constraint firstItem="MFC-oD-lNk" firstAttribute="top" secondItem="L48-Wi-CMg" secondAttribute="top" id="xOY-19-I4o"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U8C-FG-74R">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U8C-FG-74R" customClass="GADBannerView">
                                 <rect key="frame" x="27.5" y="568" width="320" height="50"/>
-                                <color key="backgroundColor" red="1" green="0.75129543529999998" blue="0.74112596009999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="fhe-UX-2fC"/>
                                     <constraint firstAttribute="height" constant="50" id="hhc-RI-XtV"/>
@@ -470,6 +470,7 @@
                     <navigationItem key="navigationItem" id="ZQZ-3o-dOB"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="bannerView" destination="U8C-FG-74R" id="yYp-Be-qYs"/>
                         <outlet property="bom1" destination="2vm-4L-P6d" id="Iej-YY-Jgr"/>
                         <outlet property="bom10" destination="r1y-F4-SzK" id="QqE-yA-DXz"/>
                         <outlet property="bom11" destination="xah-sz-aoa" id="3dc-DO-A30"/>

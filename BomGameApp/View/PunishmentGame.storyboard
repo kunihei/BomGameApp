@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -73,11 +72,11 @@
                                 </state>
                             </button>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZG-Av-lvd">
-                                <rect key="frame" x="133" y="493" width="110" height="50"/>
+                                <rect key="frame" x="100" y="493" width="175" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="hzo-eD-T9A"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="ゲームに戻る">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -86,9 +85,9 @@
                                     <action selector="displayButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="6QL-gI-0uP"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vsj-Mw-H32">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vsj-Mw-H32" customClass="GADBannerView">
                                 <rect key="frame" x="27.5" y="568" width="320" height="50"/>
-                                <color key="backgroundColor" red="1" green="0.75129543529999998" blue="0.74112596009999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="21h-vw-0nL"/>
                                     <constraint firstAttribute="height" constant="50" id="ZoY-oM-jUC"/>
@@ -108,7 +107,7 @@
                             <constraint firstItem="fWU-F8-zQK" firstAttribute="height" secondItem="Soh-Mp-qF6" secondAttribute="height" id="GDV-gO-E3w"/>
                             <constraint firstItem="LOF-yH-POX" firstAttribute="height" secondItem="Soh-Mp-qF6" secondAttribute="height" id="Hqe-s6-J4q"/>
                             <constraint firstItem="dGi-VL-2uu" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="I2p-5v-Zdn"/>
-                            <constraint firstItem="oZG-Av-lvd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="133" id="I79-wk-I9b"/>
+                            <constraint firstItem="oZG-Av-lvd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="100" id="I79-wk-I9b"/>
                             <constraint firstItem="fWU-F8-zQK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="163" id="KTL-Gh-fli"/>
                             <constraint firstItem="LOF-yH-POX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="M2w-Tt-wTe"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="FMQ-8I-hPP" secondAttribute="trailing" constant="163" id="PsO-1v-as6"/>
@@ -116,7 +115,7 @@
                             <constraint firstItem="Soh-Mp-qF6" firstAttribute="top" secondItem="dGi-VL-2uu" secondAttribute="bottom" constant="32" id="T9y-kN-yBn"/>
                             <constraint firstItem="aL0-s8-tso" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="163" id="Uhl-2s-fuu"/>
                             <constraint firstItem="vsj-Mw-H32" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="W9P-sZ-IgI"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="oZG-Av-lvd" secondAttribute="trailing" constant="132" id="YZZ-xQ-3u6"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="oZG-Av-lvd" secondAttribute="trailing" constant="100" id="YZZ-xQ-3u6"/>
                             <constraint firstItem="dGi-VL-2uu" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="dNm-8C-xx7"/>
                             <constraint firstItem="Soh-Mp-qF6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="eE9-4Z-JEW"/>
                             <constraint firstItem="fWU-F8-zQK" firstAttribute="top" secondItem="Soh-Mp-qF6" secondAttribute="bottom" constant="8" id="fBb-rB-7l8"/>
@@ -133,6 +132,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="backButton" destination="oZG-Av-lvd" id="tsi-GF-31g"/>
+                        <outlet property="bannerView" destination="vsj-Mw-H32" id="OVl-V3-XKG"/>
                         <outlet property="punishmentButton1" destination="Soh-Mp-qF6" id="9mi-KR-xsA"/>
                         <outlet property="punishmentButton2" destination="fWU-F8-zQK" id="Pkm-YS-YQb"/>
                         <outlet property="punishmentButton3" destination="LOF-yH-POX" id="Sqe-5c-TGR"/>

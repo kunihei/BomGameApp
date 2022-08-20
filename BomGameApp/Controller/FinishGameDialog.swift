@@ -7,6 +7,7 @@
 
 import UIKit
 import LTMorphingLabel
+import GoogleMobileAds
 
 class FinishGameDialog: UIViewController {
 
@@ -16,6 +17,7 @@ class FinishGameDialog: UIViewController {
     @IBOutlet weak var punishmentGameLabel3: UILabel!
     @IBOutlet weak var punishmentGameLabel4: UILabel!
     @IBOutlet weak var punishmentGameLabel5: UILabel!
+    @IBOutlet weak var bannerView: GADBannerView!
     
     private let setValue = SetValue.shared
     private let finishGameLabelArr = [
@@ -29,11 +31,29 @@ class FinishGameDialog: UIViewController {
     
     private var outputArrayLabel = [UILabel]()
     private var labelArray = [UILabel]()
+    private var interstitial: GADInterstitialAd?
+    private var interstitialID: String?
     private var timer: Timer?
     private var index = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+#if DEBUG
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/6300978111"
+        interstitialID = "ca-app-pub-3940256099942544/4411468910"
+#else
+        bannerView.adUnitID = "ca-app-pub-3279976203462809/9550021848"
+        interstitialID = "ca-app-pub-3279976203462809/2160345351"
+#endif
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+        GADInterstitialAd.load(withAdUnitID: interstitialID ?? "", request: GADRequest()) { [weak self] (ad, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            self?.interstitial = ad
+        }
 
         labelArray = [
             punishmentGameLabel1,
@@ -65,7 +85,12 @@ class FinishGameDialog: UIViewController {
         if index >= finishGameLabelArr.count { index = 0 }
     }
     
-
+    @IBAction func backButton(_ sender: Any) {
+        setValue.resetFlag = true
+        self.interstitial?.present(fromRootViewController: self)
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 

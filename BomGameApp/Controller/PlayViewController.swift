@@ -11,6 +11,7 @@ import RxCocoa
 import AVFoundation
 import AVKit
 import MBCircularProgressBar
+import GoogleMobileAds
 
 class PlayViewController: UIViewController {
     
@@ -38,6 +39,7 @@ class PlayViewController: UIViewController {
     @IBOutlet weak var bom18: UIButton!
     @IBOutlet weak var bom19: UIButton!
     @IBOutlet weak var bom20: UIButton!
+    @IBOutlet weak var bannerView: GADBannerView!
     
     private let disposeBag = DisposeBag()
     private let zeroCount = 0
@@ -58,6 +60,14 @@ class PlayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+#if DEBUG
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/6300978111"
+#else
+        bannerView.adUnitID = "ca-app-pub-3279976203462809/6099590368"
+#endif
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
         
         reset.isHidden = true
         bomButtons = [
@@ -93,6 +103,9 @@ class PlayViewController: UIViewController {
         
         setTimer()
         navigationController?.isNavigationBarHidden = true
+        if setValue.resetFlag {
+            allReset()
+        }
         numExplosionCount = setValue.initNumExplosions
         if setValue.firstSetPubnishCountFlag {
             setValue.numberPunishmentGamesDisplayed = setValue.initPunishmentGames.count
@@ -161,15 +174,6 @@ class PlayViewController: UIViewController {
             if tag == numExplo {
                 countDownTimer.invalidate()
                 setValue.countExplosions += 1
-                print("kuni_countExplosions:\(setValue.countExplosions)")
-                print("kuni_initNumExplosions:\(setValue.initNumExplosions)")
-                print("kuni_numberPunishmentGamesDisplayed:\(setValue.numberPunishmentGamesDisplayed)")
-                if setValue.countExplosions == setValue.initNumExplosions && setValue.numberPunishmentGamesDisplayed == 0 {
-                    let storyboard = UIStoryboard(name: "FinishGameDialog", bundle: nil)
-                    let finishDialog = storyboard.instantiateViewController(withIdentifier: "finishDialog") as! FinishGameDialog
-                    moveView(controller: finishDialog)
-                    return
-                }
                 let storyboard = UIStoryboard(name: "PunishmentGame", bundle: nil)
                 let punishmentGameVC = storyboard.instantiateViewController(withIdentifier: "punishment") as! PunishmentGameViewController
                 moveView(controller: punishmentGameVC)
@@ -202,9 +206,10 @@ class PlayViewController: UIViewController {
         tmpNumberOfExplosions = []
         setValue.selectedTagArray = []
         setValue.displayButtonPunishmentGames = []
-        setValue.firstSetPubnishCountFlag = false
+        setValue.firstSetPubnishCountFlag = true
         start.isHidden = false
         reset.isHidden = true
+        setValue.resetFlag = false
         setValue.selectedFlag = false
         setValue.firstShuffleFlag = true
         bomButtons.forEach { bom in

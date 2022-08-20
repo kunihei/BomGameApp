@@ -23,7 +23,6 @@
 		BA9B6DD427E56DD800860D56 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BA9B6DD327E56DD800860D56 /* Settings.bundle */; };
 		BAAF95F327A54DE50064C5AE /* PunishmentGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAAF95F227A54DE50064C5AE /* PunishmentGame.storyboard */; };
 		BAAF95F527A54E150064C5AE /* PunishmentGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAF95F427A54E150064C5AE /* PunishmentGameViewController.swift */; };
-		BAAF95F727A68C060064C5AE /* Explosion.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = BAAF95F627A669A40064C5AE /* Explosion.mp4 */; };
 		BAB7B114279A2A6E00F592DB /* Play.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAB7B113279A2A6E00F592DB /* Play.storyboard */; };
 		BAB7B116279BDAC200F592DB /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB7B115279BDAC200F592DB /* PlayViewController.swift */; };
 /* End PBXBuildFile section */
@@ -49,7 +48,6 @@
 		BA9B6DD327E56DD800860D56 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		BAAF95F227A54DE50064C5AE /* PunishmentGame.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PunishmentGame.storyboard; sourceTree = "<group>"; };
 		BAAF95F427A54E150064C5AE /* PunishmentGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PunishmentGameViewController.swift; sourceTree = "<group>"; };
-		BAAF95F627A669A40064C5AE /* Explosion.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Explosion.mp4; sourceTree = "<group>"; };
 		BAB7B113279A2A6E00F592DB /* Play.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Play.storyboard; sourceTree = "<group>"; };
 		BAB7B115279BDAC200F592DB /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,7 +99,6 @@
 				BAB7B110279A2A3900F592DB /* Controller */,
 				BA1BA867279843F00054C44C /* Assets.xcassets */,
 				BA1BA86C279843F00054C44C /* Info.plist */,
-				BAAF95F627A669A40064C5AE /* Explosion.mp4 */,
 				BA9B6DD327E56DD800860D56 /* Settings.bundle */,
 			);
 			path = BomGameApp;
@@ -219,7 +216,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAAF95F727A68C060064C5AE /* Explosion.mp4 in Resources */,
 				BAB7B114279A2A6E00F592DB /* Play.storyboard in Resources */,
 				BA1BA86B279843F00054C44C /* LaunchScreen.storyboard in Resources */,
 				BA16E45D27F96A0400053FE0 /* PunishmentGameDialog.storyboard in Resources */,
@@ -351,6 +347,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				GADApplicationIdentifier = "ca-app-pub-3940256099942544~1458002511";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -412,6 +409,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GADApplicationIdentifier = "ca-app-pub-3279976203462809~3773358660";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -441,17 +439,19 @@
 				DEVELOPMENT_TEAM = 8ARG4D8LX2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BomGameApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "BaaaaaaaN GAME";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "表示する広告を適切に選択するために使用します。";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.shouhei.BomGameApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -471,17 +471,19 @@
 				DEVELOPMENT_TEAM = 8ARG4D8LX2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BomGameApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "BaaaaaaaN GAME";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "表示する広告を適切に選択するために使用します。";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.shouhei.BomGameApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

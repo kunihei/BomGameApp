@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AppTrackingTransparency
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -27,6 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneDidBecomeActive(_ scene: UIScene) {
+        requestAppTrackingTransparencyAuthorization()
         // Called when the scene has moved from an inactive state to an active state.
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
     }
@@ -45,6 +47,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+    }
+    
+    private func requestAppTrackingTransparencyAuthorization() {
+        if #available(iOS 14.5, *) {
+            // .notDeterminedの場合にだけリクエスト呼び出しを行う
+            guard ATTrackingManager.trackingAuthorizationStatus == .notDetermined else { return }
+            // タイミングを遅らせる為に処理を遅延させる
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
+                    // リクエスト後の状態に応じた処理を行う
+                })
+            }
+        }
     }
 
 

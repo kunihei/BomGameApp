@@ -9,6 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import LTMorphingLabel
+import GoogleMobileAds
 
 class PunishmentGameViewController: UIViewController {
     
@@ -19,6 +20,7 @@ class PunishmentGameViewController: UIViewController {
     @IBOutlet weak var punishmentButton4: UIButton!
     @IBOutlet weak var punishmentButton5: UIButton!
     @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var bannerView: GADBannerView!
     
     private let disposeBag = DisposeBag()
     private let setValue = SetValue.shared
@@ -26,14 +28,27 @@ class PunishmentGameViewController: UIViewController {
     
     private var punishmentButtonList:[UIButton] = []
     private var firstShuffleFlag = Bool()
+    private var interstitial: GADInterstitialAd?
+    private var interstitialID: String?
     private var firstTapBtn = Int()
+    private var finishFlag = false
     private var timer: Timer?
     private var index = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+#if DEBUG
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/6300978111"
+#else
+        bannerView.adUnitID = "ca-app-pub-3279976203462809/4511725261"
+#endif
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+        
         navigationController?.isNavigationBarHidden = true
+        backButton.isEnabled = false
+        backButton.setTitleColor(.lightGray, for: .normal)
         titleLabel.text = titleStringArray[index]
         titleLabel.morphingEffect = .burn
         timer = Timer.scheduledTimer(
@@ -70,6 +85,12 @@ class PunishmentGameViewController: UIViewController {
                     )
                     self?.setSelectedButton(button: button)
                     self?.setValue.numberPunishmentGamesDisplayed -= 1
+                    if self?.setValue.numberPunishmentGamesDisplayed == 0 {
+                        self?.backButton.setTitle("ゲーム終了", for: .normal)
+                        self?.finishFlag = true
+                    }
+                    self?.backButton.isEnabled = true
+                    self?.backButton.setTitleColor(.white, for: .normal)
                 })
                 .disposed(by: disposeBag)
         }
@@ -79,6 +100,24 @@ class PunishmentGameViewController: UIViewController {
         titleLabel.text = titleStringArray[index]
         index += 1
         if index >= titleStringArray.count { index = 0 }
+    }
+    
+    // 画面遷移アニメーション
+    private func moveView(controller: UIViewController) {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
+        view.alpha = 0
+        view.backgroundColor = .white
+        self.view.addSubview(view)
+        UIWindow.animate(withDuration: 1.0) {
+            view.alpha = 1.0
+        } completion: { (Bool) in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                self.navigationController?.pushViewController(controller, animated: false)
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                view.removeFromSuperview()
+            }
+        }
     }
     
     // タップしたボタン非表示、初回タップした値セット
@@ -128,7 +167,14 @@ class PunishmentGameViewController: UIViewController {
     }
     
     @IBAction func displayButton(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+        if finishFlag {
+            finishFlag = false
+            let storyboard = UIStoryboard(name: "FinishGameDialog", bundle: nil)
+            let finishDialog = storyboard.instantiateViewController(withIdentifier: "finishDialog") as! FinishGameDialog
+            moveView(controller: finishDialog)
+        } else {
+            navigationController?.popViewController(animated: true)
+        }
     }
     
     /*

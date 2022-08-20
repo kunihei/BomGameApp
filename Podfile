@@ -10,4 +10,5 @@ target 'BomGameApp' do
    pod 'RxCocoa'
    pod 'LTMorphingLabel'
    pod "MBCircularProgressBar"
+   pod 'Google-Mobile-Ads-SDK'
 end

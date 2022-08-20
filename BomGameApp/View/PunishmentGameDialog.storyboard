@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -26,7 +25,7 @@
                                 <color key="textColor" red="1" green="0.3271392937" blue="0.26151021229999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="7" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ドクロマーク" translatesAutoresizingMaskIntoConstraints="NO" id="SZX-wf-1YQ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="7" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dokuro" translatesAutoresizingMaskIntoConstraints="NO" id="SZX-wf-1YQ">
                                 <rect key="frame" x="87.5" y="88" width="200" height="110"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="110" id="Ng2-nD-RPy"/>
@@ -93,14 +92,26 @@
                                 <color key="textColor" red="1" green="0.3271392937" blue="0.26151021229999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XK0-Qw-w0A">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XK0-Qw-w0A" customClass="GADBannerView">
                                 <rect key="frame" x="27.5" y="597" width="320" height="50"/>
-                                <color key="backgroundColor" red="1" green="0.75129543529999998" blue="0.74112596009999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="7kU-eL-XyK"/>
                                     <constraint firstAttribute="width" constant="320" id="Snl-mF-OOB"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cW1-AB-k4Z">
+                                <rect key="frame" x="16" y="35" width="33" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Y6s-7h-OY7"/>
+                                    <constraint firstAttribute="width" constant="33" id="pYU-EC-28N"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="allow_white"/>
+                                <connections>
+                                    <action selector="backButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="8lo-XM-yf2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -110,12 +121,14 @@
                             <constraint firstItem="lrY-xz-Qzv" firstAttribute="top" secondItem="XqN-Rv-QvH" secondAttribute="bottom" constant="8" symbolic="YES" id="9gH-lB-pMn"/>
                             <constraint firstItem="KKC-mK-sb8" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Bi4-Li-XyM"/>
                             <constraint firstItem="XqN-Rv-QvH" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Bpl-AU-76d"/>
+                            <constraint firstItem="cW1-AB-k4Z" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="G0a-F5-Hs6"/>
                             <constraint firstItem="DfW-SZ-2lB" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="L2y-98-N1c"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="XK0-Qw-w0A" secondAttribute="bottom" constant="20" id="N1x-4B-PRq"/>
                             <constraint firstItem="W9e-iJ-ToE" firstAttribute="top" secondItem="v7V-0a-MeW" secondAttribute="bottom" constant="8" symbolic="YES" id="O1o-Bf-XgN"/>
                             <constraint firstItem="XqN-Rv-QvH" firstAttribute="top" secondItem="W9e-iJ-ToE" secondAttribute="bottom" constant="8" symbolic="YES" id="XIJ-qc-tuS"/>
                             <constraint firstItem="XK0-Qw-w0A" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="aEb-at-pa8"/>
                             <constraint firstItem="lrY-xz-Qzv" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="ae1-LU-aci"/>
+                            <constraint firstItem="cW1-AB-k4Z" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="35" id="dph-ZB-hkQ"/>
                             <constraint firstItem="v7V-0a-MeW" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="hEx-pd-WHS"/>
                             <constraint firstItem="KKC-mK-sb8" firstAttribute="top" secondItem="lrY-xz-Qzv" secondAttribute="bottom" constant="8" symbolic="YES" id="nrD-C3-PPD"/>
                             <constraint firstItem="DfW-SZ-2lB" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="oom-pj-Wwy"/>
@@ -126,6 +139,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bannerView" destination="XK0-Qw-w0A" id="4be-e2-d6B"/>
                         <outlet property="punishmentExplanationLabel" destination="v7V-0a-MeW" id="TRb-qe-bMq"/>
                         <outlet property="punishmentGameLabel1" destination="W9e-iJ-ToE" id="kfL-La-TI8"/>
                         <outlet property="punishmentGameLabel2" destination="XqN-Rv-QvH" id="mZA-rh-jof"/>
@@ -143,6 +157,7 @@
         <designable name="v7V-0a-MeW"/>
     </designables>
     <resources>
-        <image name="ドクロマーク" width="256" height="256"/>
+        <image name="allow_white" width="256" height="256"/>
+        <image name="dokuro" width="256" height="256"/>
     </resources>
 </document>

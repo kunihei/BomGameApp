@@ -9,6 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import LTMorphingLabel
+import GoogleMobileAds
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
@@ -20,6 +21,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var timerTextField: UITextField!
     @IBOutlet weak var numExplosions: UITextField!
     @IBOutlet weak var explanationLabel: LTMorphingLabel!
+    @IBOutlet weak var bannerView: GADBannerView!
     
     private let disposeBag = DisposeBag()
     private let pickerView: UIPickerView = UIPickerView()
@@ -41,6 +43,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+#if DEBUG
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/6300978111"
+#else
+        bannerView.adUnitID = "ca-app-pub-3279976203462809/3390215288"
+#endif
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
         
         for i in 0...25 {
             if (i % 5) == 0 {
