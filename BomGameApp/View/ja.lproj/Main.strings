@@ -1,0 +1,39 @@
+
+/* Class = "UILabel"; text = "制限時間"; ObjectID = "1Ng-sT-mos"; */
+"1Ng-sT-mos.text" = "制限時間";
+
+/* Class = "UILabel"; text = "秒"; ObjectID = "4Cp-h7-ngq"; */
+"4Cp-h7-ngq.text" = "秒";
+
+/* Class = "UITextField"; placeholder = "罰ゲーム2個目"; ObjectID = "A8X-Ju-0az"; */
+"A8X-Ju-0az.placeholder" = "罰ゲーム2個目";
+
+/* Class = "UITextField"; placeholder = "罰ゲーム1個目"; ObjectID = "CTk-6T-v9E"; */
+"CTk-6T-v9E.placeholder" = "罰ゲーム1個目";
+
+/* Class = "UILabel"; text = "個"; ObjectID = "EnT-EY-e0e"; */
+"EnT-EY-e0e.text" = "個";
+
+/* Class = "UILabel"; text = "罰ゲーム"; ObjectID = "Ewj-o0-Ynh"; */
+"Ewj-o0-Ynh.text" = "罰ゲーム";
+
+/* Class = "UILabel"; text = "※最低1つは入力してください！"; ObjectID = "LZQ-Yo-p88"; */
+"LZQ-Yo-p88.text" = "※最低1つは入力してください！";
+
+/* Class = "UITextField"; placeholder = "罰ゲーム4個目"; ObjectID = "OOV-z4-UDy"; */
+"OOV-z4-UDy.placeholder" = "罰ゲーム4個目";
+
+/* Class = "UITabBarItem"; title = "プレイ"; ObjectID = "Q1f-Ki-yif"; */
+"Q1f-Ki-yif.title" = "プレイ";
+
+/* Class = "UITabBarItem"; title = "設定"; ObjectID = "Tzt-N8-g7c"; */
+"Tzt-N8-g7c.title" = "設定";
+
+/* Class = "UITextField"; placeholder = "罰ゲーム5個目"; ObjectID = "dXt-Ti-pb2"; */
+"dXt-Ti-pb2.placeholder" = "罰ゲーム5個目";
+
+/* Class = "UITextField"; placeholder = "罰ゲーム3個目"; ObjectID = "e2Z-q6-mih"; */
+"e2Z-q6-mih.placeholder" = "罰ゲーム3個目";
+
+/* Class = "UILabel"; text = "爆破個数"; ObjectID = "tnS-cj-Fo0"; */
+"tnS-cj-Fo0.text" = "爆破個数";

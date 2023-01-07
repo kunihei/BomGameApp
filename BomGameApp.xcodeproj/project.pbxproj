@@ -17,6 +17,7 @@
 		BA1BA868279843F00054C44C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA1BA867279843F00054C44C /* Assets.xcassets */; };
 		BA1BA86B279843F00054C44C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA1BA869279843F00054C44C /* LaunchScreen.storyboard */; };
 		BA35D2FE27E9F4DF00AF120F /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA35D2FD27E9F4DF00AF120F /* TextField.swift */; };
+		BA589FDA28B0D72000B00835 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BA589FDC28B0D72000B00835 /* Localizable.strings */; };
 		BA674EBC279EECBE00581457 /* SetValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA674EBB279EECBE00581457 /* SetValue.swift */; };
 		BA81701E280A5762002A94BF /* FinishGameDialog.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA81701D280A5762002A94BF /* FinishGameDialog.storyboard */; };
 		BA817020280A57A9002A94BF /* FinishGameDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA81701F280A57A9002A94BF /* FinishGameDialog.swift */; };
@@ -42,6 +43,10 @@
 		BA1BA86A279843F00054C44C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA1BA86C279843F00054C44C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA35D2FD27E9F4DF00AF120F /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		BA589FD628B0D6AC00B00835 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		BA589FD728B0D6AC00B00835 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		BA589FDB28B0D72000B00835 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BA589FDD28B0D7AD00B00835 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BA674EBB279EECBE00581457 /* SetValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetValue.swift; sourceTree = "<group>"; };
 		BA81701D280A5762002A94BF /* FinishGameDialog.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FinishGameDialog.storyboard; sourceTree = "<group>"; };
 		BA81701F280A57A9002A94BF /* FinishGameDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishGameDialog.swift; sourceTree = "<group>"; };
@@ -100,6 +105,7 @@
 				BA1BA867279843F00054C44C /* Assets.xcassets */,
 				BA1BA86C279843F00054C44C /* Info.plist */,
 				BA9B6DD327E56DD800860D56 /* Settings.bundle */,
+				BA589FDC28B0D72000B00835 /* Localizable.strings */,
 			);
 			path = BomGameApp;
 			sourceTree = "<group>";
@@ -200,6 +206,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = BA1BA852279843EF0054C44C;
 			productRefGroup = BA1BA85C279843EF0054C44C /* Products */;
@@ -220,6 +227,7 @@
 				BA1BA86B279843F00054C44C /* LaunchScreen.storyboard in Resources */,
 				BA16E45D27F96A0400053FE0 /* PunishmentGameDialog.storyboard in Resources */,
 				BA81701E280A5762002A94BF /* FinishGameDialog.storyboard in Resources */,
+				BA589FDA28B0D72000B00835 /* Localizable.strings in Resources */,
 				BA1BA868279843F00054C44C /* Assets.xcassets in Resources */,
 				BA1BA866279843EF0054C44C /* Main.storyboard in Resources */,
 				BAAF95F327A54DE50064C5AE /* PunishmentGame.storyboard in Resources */,
@@ -295,6 +303,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				BA1BA865279843EF0054C44C /* Base */,
+				BA589FD728B0D6AC00B00835 /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -303,8 +312,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				BA1BA86A279843F00054C44C /* Base */,
+				BA589FD628B0D6AC00B00835 /* ja */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		BA589FDC28B0D72000B00835 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BA589FDB28B0D72000B00835 /* ja */,
+				BA589FDD28B0D7AD00B00835 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -314,6 +333,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -376,6 +396,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -440,18 +461,19 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BomGameApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "BaaaaaaaN GAME";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "表示する広告を適切に選択するために使用します。";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.shouhei.BomGameApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -472,18 +494,19 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BomGameApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "BaaaaaaaN GAME";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "表示する広告を適切に選択するために使用します。";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.shouhei.BomGameApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

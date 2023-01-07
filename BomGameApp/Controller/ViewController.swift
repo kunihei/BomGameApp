@@ -13,6 +13,8 @@ import GoogleMobileAds
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var punishmentGameTitle: UILabel!
+    @IBOutlet weak var noteLabel: UILabel!
     @IBOutlet weak var punishmentGame1: UITextField!
     @IBOutlet weak var punishmentGame2: UITextField!
     @IBOutlet weak var punishmentGame3: UITextField!
@@ -21,13 +23,23 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var timerTextField: UITextField!
     @IBOutlet weak var numExplosions: UITextField!
     @IBOutlet weak var explanationLabel: LTMorphingLabel!
+    @IBOutlet weak var secTitleLabel: UILabel!
+    @IBOutlet weak var secLabel: UILabel!
+    @IBOutlet weak var numberOfExplosionsTitleLabel: UILabel!
+    @IBOutlet weak var piecesLabel: UILabel!
     @IBOutlet weak var bannerView: GADBannerView!
     
     private let disposeBag = DisposeBag()
     private let pickerView: UIPickerView = UIPickerView()
     private let pickerView2: UIPickerView = UIPickerView()
     private let exposionCountArray = ["1", "2", "3", "4", "5"]
-    private let explanationArray = ["罰ゲームを", "最低一つは", "入力してください!", "でないとゲームを", "始めることができません!"]
+    private let explanationArray = [
+        NSLocalizedString("punishmentList1", comment: ""),
+        NSLocalizedString("punishmentList2", comment: ""),
+        NSLocalizedString("punishmentList3", comment: ""),
+        NSLocalizedString("punishmentList4", comment: ""),
+        NSLocalizedString("punishmentList5", comment: "")
+    ]
     private let targetTabBar = 1
     private let limitExposionCount = 5
     private let limitTimerCount = 60

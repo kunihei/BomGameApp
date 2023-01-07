@@ -231,12 +231,18 @@
                     <connections>
                         <outlet property="bannerView" destination="QZq-oc-JTO" id="cBz-bm-s1m"/>
                         <outlet property="explanationLabel" destination="ADz-qP-Ao6" id="NUu-ua-Aig"/>
+                        <outlet property="noteLabel" destination="LZQ-Yo-p88" id="fiO-Wb-B95"/>
                         <outlet property="numExplosions" destination="yrR-1E-iXv" id="dY1-Cl-L1e"/>
+                        <outlet property="numberOfExplosionsTitleLabel" destination="tnS-cj-Fo0" id="JZB-8c-uN4"/>
+                        <outlet property="piecesLabel" destination="EnT-EY-e0e" id="Lcj-0a-q6Z"/>
                         <outlet property="punishmentGame1" destination="CTk-6T-v9E" id="LD7-rx-H87"/>
                         <outlet property="punishmentGame2" destination="A8X-Ju-0az" id="OCa-5x-94o"/>
                         <outlet property="punishmentGame3" destination="e2Z-q6-mih" id="5ti-lx-rQW"/>
                         <outlet property="punishmentGame4" destination="OOV-z4-UDy" id="JkN-sr-19S"/>
                         <outlet property="punishmentGame5" destination="dXt-Ti-pb2" id="WmV-2R-V2v"/>
+                        <outlet property="punishmentGameTitle" destination="Ewj-o0-Ynh" id="nwZ-hH-WZk"/>
+                        <outlet property="secLabel" destination="4Cp-h7-ngq" id="i0I-Nt-1IQ"/>
+                        <outlet property="secTitleLabel" destination="1Ng-sT-mos" id="VmU-rX-Naa"/>
                         <outlet property="timerTextField" destination="CgV-WW-1G5" id="32Y-ko-cSw"/>
                     </connections>
                 </viewController>

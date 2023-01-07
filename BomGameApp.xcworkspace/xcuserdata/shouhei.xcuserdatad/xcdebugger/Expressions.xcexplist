@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "PunishmentGameViewController.viewDidLoad():PunishmentGameViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "setValue.initNumExplosions">
+            </PersistentString>
+            <PersistentString
+               value = "setValue.numberPunishmentGamesDisplayed">
+            </PersistentString>
+            <PersistentString
+               value = "setValue.countExplosions">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

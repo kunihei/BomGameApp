@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  BomGameApp
+
+  Created by 祥平 on 2022/08/20.
+  
+*/
+
+"punishmentList1" = "罰ゲームを";
+"punishmentList2" = "最低一つは";
+"punishmentList3" = "入力してください!";
+"punishmentList4" = "でないとゲームを";
+"punishmentList5" = "始めることができません!";
